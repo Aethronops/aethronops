@@ -1,180 +1,254 @@
-# AethronOps — Stack Catalog
+# AethronOps
 
-Production-ready Azure infrastructure as code. Each stack is a complete Terraform project using [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) with built-in compliance mappings (CAF, WAF, MCSB, GDPR, NIS2).
+**Production-ready Azure Terraform stacks with verifiable compliance proof.**
 
-All stacks include 3 tiers (Basic / Standard / Premium) in a single ZIP.
+Built exclusively with [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — the official Microsoft-maintained Terraform modules.
+
+---
+
+### Why AethronOps?
+
+- **Zero to production in 5 minutes** — `terraform init && terraform apply`, done
+- **100% Azure Verified Modules** — no custom code, no community modules, no maintenance burden
+- **3 tiers in every stack** — Basic (dev), Standard (production), Premium (enterprise) in a single ZIP
+- **Compliance built-in** — CAF, WAF, MCSB, GDPR, NIS2 mappings with every stack
+- **No access needed** — we never touch your Azure, your repo, or your credentials
+
+### What's in every stack?
+
+```
+your-stack/
+  basic/              # Dev/POC tier
+  standard/           # Production tier
+  premium/            # Enterprise tier (PE, Firewall, Backup, zone-redundancy)
+  README.md           # Architecture guide
+  COMPLIANCE.md       # Control mappings (MCSB, GDPR, NIS2, CAF, WAF)
+  manifest.yaml       # Stack metadata
+```
+
+Each tier contains production-ready Terraform with:
+- `terraform validate` PASSED
+- `terraform plan` PASSED
+- `checkov` 0 failed checks
+- CAF naming convention applied
+- Managed Identity (no credentials in code)
+- Diagnostic settings to Log Analytics
+- Key Vault for secrets management
+
+---
+
+## Stack Catalog
 
 ### Web Applications
 
 | Stack | Description |
 |-------|-------------|
-| [App Service Web](appservice-web.md) | Azure App Service for web applications with Key Vault, Storage, and monitoring. |
-| [App Service + PostgreSQL](appservice-postgresql.md) | Azure App Service with PostgreSQL Flexible Server, Key Vault, Storage, and monitoring. |
-| [App Service + MySQL](appservice-mysql.md) | Azure App Service with MySQL Flexible Server, Key Vault, Storage, and monitoring. |
-| [App Service + Azure SQL](appservice-sql.md) | Azure App Service with Azure SQL Database, Key Vault, Storage, and monitoring. |
-| [App Service + Cosmos DB](appservice-cosmosdb.md) | Azure App Service with Cosmos DB (NoSQL), Key Vault, Storage, and monitoring. |
-| [API REST Starter](api-rest-starter.md) | App Service hosting a REST API with Key Vault, Storage, monitoring, and network isolation. |
-| [API Gateway Platform](api-gateway-platform.md) | Azure API Management with App Service backend, Key Vault, and monitoring. |
-| [WordPress on Azure](wordpress-azure.md) | WordPress on App Service with MySQL Flexible Server, Front Door CDN, Key Vault, Storage, and monitoring. |
+| [App Service Web](stacks/appservice-web.md) | App Service with Key Vault, Managed Identity, Storage, and monitoring |
+| [App Service + PostgreSQL](stacks/appservice-postgresql.md) | App Service with PostgreSQL Flexible Server and full wiring |
+| [App Service + MySQL](stacks/appservice-mysql.md) | App Service with MySQL Flexible Server and full wiring |
+| [App Service + Azure SQL](stacks/appservice-sql.md) | App Service with Azure SQL Database and full wiring |
+| [App Service + Cosmos DB](stacks/appservice-cosmosdb.md) | App Service with Cosmos DB (NoSQL) and full wiring |
+| [App Service HA](stacks/multi-region-ha.md) | High-availability App Service with Redis Cache, PostgreSQL, Front Door WAF |
+| [API REST Starter](stacks/api-rest-starter.md) | App Service REST API with Key Vault, Storage, and network isolation |
+| [API Gateway Platform](stacks/api-gateway-platform.md) | Azure API Management with App Service backend and monitoring |
 
-### Serverless
-
-| Stack | Description |
-|-------|-------------|
-| [Function App Baseline](function-app-baseline.md) | Azure Functions with Key Vault, Storage, monitoring, and network isolation. |
-| [Function App + PostgreSQL](function-app-postgresql.md) | Azure Functions with PostgreSQL Flexible Server, Key Vault, Storage, and monitoring. |
-| [Function App + MySQL](function-app-mysql.md) | Azure Functions with MySQL Flexible Server, Key Vault, Storage, and monitoring. |
-| [Function App + Azure SQL](function-app-sql.md) | Azure Functions with Azure SQL Database, Key Vault, Storage, and monitoring. |
-| [Function App + Cosmos DB](function-app-cosmosdb.md) | Azure Functions with Cosmos DB, Key Vault, Storage, and monitoring. |
-| [Serverless Full-Stack](serverless-fullstack.md) | Serverless full-stack application with Static Web App (frontend), Function App (API), Cosmos DB (database), and monitoring. |
-| [Static Web App](static-web-app.md) | Azure Static Web App for SPA (React, Vue, Angular) and JAMstack sites. |
-| [Static Website](static-website.md) | Lightweight static site hosting with Storage Account static website, Key Vault, and monitoring. |
-
-### Containers
+### Serverless (Azure Functions)
 
 | Stack | Description |
 |-------|-------------|
-| [AKS Startup](aks-startup.md) | Lightweight AKS cluster for startups and small teams. |
-| [AKS Microservices](aks-microservices.md) | Multi-node-pool AKS cluster for microservices architectures. |
-| [AKS Platform](aks-platform.md) | Enterprise AKS platform with 3+ node pools, Front Door WAF, PostgreSQL, MySQL, ACR, and Firewall. |
-| [Container Apps Baseline](container-apps-baseline.md) | Azure Container Apps with Container Apps Environment, ACR, Key Vault, and monitoring. |
-| [Azure Container Registry](acr-registry.md) | Private container registry with geo-replication, vulnerability scanning, and network isolation. |
-| [Artifact Registry](artifact-registry.md) | Azure Container Registry for storing container images, Helm charts, and OCI artifacts. |
+| [Function App Baseline](stacks/function-app-baseline.md) | Azure Functions (Consumption Y1) with Key Vault, Storage, and monitoring |
+| [Function App + PostgreSQL](stacks/function-app-postgresql.md) | Azure Functions with PostgreSQL Flexible Server |
+| [Function App + MySQL](stacks/function-app-mysql.md) | Azure Functions with MySQL Flexible Server |
+| [Function App + Azure SQL](stacks/function-app-sql.md) | Azure Functions with Azure SQL Database |
+| [Function App + Cosmos DB](stacks/function-app-cosmosdb.md) | Azure Functions with Cosmos DB |
+| [Serverless Full-Stack](stacks/serverless-fullstack.md) | Static Web App + Function App + Cosmos DB |
+| [Static Web App](stacks/static-web-app.md) | Azure Static Web App for SPA and JAMstack |
+| [Static Website](stacks/static-website.md) | Storage Account static site hosting |
 
-### AI & Machine Learning
-
-| Stack | Description |
-|-------|-------------|
-| [OpenAI Baseline](openai-baseline.md) | Azure OpenAI Service with Key Vault, Managed Identity, and monitoring. |
-| [RAG Baseline](rag-baseline.md) | Retrieval-Augmented Generation with Azure OpenAI + AI Search + Storage. |
-| [RAG + PostgreSQL (pgvector)](rag-postgresql.md) | RAG architecture using PostgreSQL pgvector as vector store. |
-| [RAG + Azure SQL](rag-sql.md) | RAG architecture using Azure SQL as vector store. |
-| [RAG + Cosmos DB](rag-cosmosdb.md) | RAG architecture using Cosmos DB as vector store. |
-| [RAG Enterprise](rag-enterprise.md) | Enterprise RAG with Azure OpenAI, AI Search, App Service frontend, Firewall, Bastion, and full network isolation. |
-| [Chatbot Enterprise](chatbot-enterprise.md) | Azure OpenAI + AI Search + App Service chatbot with RAG architecture. |
-| [AI Foundry Baseline](ai-foundry-baseline.md) | Azure AI Foundry (Machine Learning workspace) with Key Vault, Storage, and monitoring. |
-| [AI Foundry Enterprise](ai-foundry-enterprise.md) | Enterprise-grade AI Foundry with Container Registry, Application Insights, full network isolation, and Backup Vault. |
-| [AI Multi-Service Baseline](ai-multiservice-baseline.md) | Azure AI Services (multi-service Cognitive Account) with Key Vault, monitoring, and network isolation. |
-| [AI Data Platform](ai-data-platform.md) | End-to-end data and AI platform combining Azure Databricks, Data Factory, Synapse Analytics, and Machine Learning. |
-| [AI Secure Regulated](ai-secure-regulated.md) | Fully isolated AI platform for regulated industries. |
-| [GenAI Private Baseline](genai-private-baseline.md) | Private generative AI stack with Azure OpenAI, AI Search, Storage, behind Private Endpoints. |
-| [MLOps Platform](mlops-platform.md) | Azure Machine Learning with Container Registry, Key Vault, Storage, Application Insights, and network isolation. |
-| [Internal Knowledge Hub](internal-knowledge-hub.md) | RAG-based internal knowledge base with Azure OpenAI, AI Search, Storage, and App Service. |
-
-### AI Cognitive Services
+### Container Apps
 
 | Stack | Description |
 |-------|-------------|
-| [Vision Baseline](vision-baseline.md) | Azure AI Vision with Key Vault, monitoring, and network isolation. |
-| [Vision Video Analytics](vision-video-analytics.md) | Video analytics with Azure AI Vision, Storage, and monitoring. |
-| [Speech Baseline](speech-baseline.md) | Azure AI Speech with Key Vault, monitoring, and network isolation. |
-| [Speech Call Center](speech-call-center.md) | Call center analytics with Azure AI Speech, Communication Services, Storage, and monitoring. |
-| [NLP Language Baseline](nlp-language-baseline.md) | Azure AI Language service with Key Vault, monitoring, and network isolation. |
-| [NLP Translator Baseline](nlp-translator-baseline.md) | Azure AI Translator with Key Vault, monitoring, and network isolation. |
-| [Document Intelligence Baseline](document-intelligence-baseline.md) | Azure AI Document Intelligence (Form Recognizer) with Key Vault, monitoring, and network isolation. |
-| [Document Intelligence Pipeline](document-intelligence-pipeline.md) | Document processing pipeline with AI Document Intelligence, Storage, Logic App, and monitoring. |
-| [Knowledge Mining Baseline](knowledge-mining-baseline.md) | Azure AI Search with Cognitive Skills, Storage (data source), Key Vault, and monitoring. |
-| [Content Safety Platform](content-safety-platform.md) | Azure AI Content Safety with OpenAI integration, monitoring, and network isolation. |
+| [Container Apps Baseline](stacks/container-apps-baseline.md) | Container Apps Environment with Key Vault, Managed Identity, and monitoring |
+| [Container Apps + PostgreSQL](stacks/container-app-postgresql.md) | Container Apps with PostgreSQL Flexible Server and full wiring |
+| [Container Apps + MySQL](stacks/container-app-mysql.md) | Container Apps with MySQL Flexible Server and full wiring |
+| [Container Apps + Azure SQL](stacks/container-app-sql.md) | Container Apps with Azure SQL Database and full wiring |
+| [Container Apps + Cosmos DB](stacks/container-app-cosmosdb.md) | Container Apps with Cosmos DB (NoSQL) and full wiring |
 
-### Databases
+### Kubernetes (AKS)
 
 | Stack | Description |
 |-------|-------------|
-| [PostgreSQL Private](postgresql-private.md) | Standalone PostgreSQL Flexible Server with full network isolation, Key Vault, monitoring, and backup. |
-| [MySQL Private](mysql-private.md) | Standalone MySQL Flexible Server with full network isolation, Key Vault, monitoring, and backup. |
-| [Azure SQL Private](sql-private.md) | Standalone Azure SQL Database with full network isolation, Key Vault, monitoring, and backup. |
-| [Cosmos DB Baseline](cosmosdb-baseline.md) | Azure Cosmos DB (NoSQL) with Key Vault, monitoring, and network isolation. |
-| [Redis Cache App](redis-cache-app.md) | Azure Cache for Redis with App Service, Key Vault, monitoring, and network isolation. |
-| [Storage Baseline](storage-baseline.md) | Azure Storage Account with Key Vault, monitoring, and network isolation. |
+| [AKS Startup](stacks/aks-startup.md) | Lightweight AKS (Free tier) with ACR, VNet, Key Vault |
+| [AKS Microservices](stacks/aks-microservices.md) | Multi-node-pool AKS optimized for microservices |
+| [AKS Platform](stacks/aks-platform.md) | Enterprise AKS with private cluster, Azure Policy, Firewall, and GitOps |
+| [Azure Container Registry](stacks/acr-registry.md) | Private ACR with geo-replication and vulnerability scanning |
+| [Artifact Registry](stacks/artifact-registry.md) | ACR for container images, Helm charts, and OCI artifacts |
 
-### Database Admin Packs
+### Databases (PaaS)
 
 | Stack | Description |
 |-------|-------------|
-| [DB Admin — PostgreSQL](db-admin-postgresql.md) | Administration pack for an existing PostgreSQL Flexible Server. |
-| [DB Admin — MySQL](db-admin-mysql.md) | Administration pack for an existing MySQL Flexible Server. |
-| [DB Admin — Azure SQL](db-admin-sql.md) | Administration pack for an existing Azure SQL Database. |
-| [DB Admin — Cosmos DB](db-admin-cosmosdb.md) | Administration pack for an existing Cosmos DB account. |
-| [DB Admin — Redis](db-admin-redis.md) | Administration pack for an existing Azure Cache for Redis. |
-| [DB Admin — SQL Managed Instance](db-admin-sqlmi.md) | Administration pack for an existing SQL Managed Instance. |
+| [PostgreSQL Private](stacks/postgresql-private.md) | PostgreSQL Flexible Server with Private Endpoints, Key Vault, and backup |
+| [MySQL Private](stacks/mysql-private.md) | MySQL Flexible Server with Private Endpoints, Key Vault, and backup |
+| [Azure SQL Private](stacks/sql-private.md) | Azure SQL Database with Private Endpoints, Key Vault, and backup |
+| [Cosmos DB Baseline](stacks/cosmosdb-baseline.md) | Cosmos DB (NoSQL API) with Key Vault and network isolation |
+| [Redis Cache App](stacks/redis-cache-app.md) | Azure Cache for Redis with App Service and monitoring |
+| [Storage Baseline](stacks/storage-baseline.md) | Azure Storage Account with encryption, lifecycle policies, and PE |
+
+### Database Admin Packs (PaaS only)
+
+Brownfield monitoring and observability for **existing** Azure PaaS databases. These packs do NOT deploy the database — they add Log Analytics, diagnostic settings, alerts, and Key Vault on top.
+
+| Stack | Description |
+|-------|-------------|
+| [DB Admin PostgreSQL](stacks/db-admin-postgresql.md) | Monitoring pack for existing PostgreSQL Flexible Server |
+| [DB Admin MySQL](stacks/db-admin-mysql.md) | Monitoring pack for existing MySQL Flexible Server |
+| [DB Admin Azure SQL](stacks/db-admin-sql.md) | Monitoring pack for existing Azure SQL Database |
+| [DB Admin Cosmos DB](stacks/db-admin-cosmosdb.md) | Monitoring pack for existing Cosmos DB account |
+| [DB Admin Redis](stacks/db-admin-redis.md) | Monitoring pack for existing Azure Cache for Redis |
 
 ### IaaS Databases (VM)
 
+Self-managed databases on Azure VMs using **Azure Marketplace images** — no ISO download needed. Cloud-init auto-configures the database engine with HA and backup.
+
 | Stack | Description |
 |-------|-------------|
-| [VM + PostgreSQL (IaaS)](vm-postgresql-iaas.md) | PostgreSQL on Azure VM with managed disks, Key Vault, monitoring, and backup. |
-| [VM + MySQL (IaaS)](vm-mysql-iaas.md) | MySQL on Azure VM with managed disks, Key Vault, monitoring, and backup. |
-| [VM + SQL Server (IaaS)](vm-sqlserver-iaas.md) | SQL Server on Azure VM with managed disks, Key Vault, monitoring, and backup. |
-| [VM + Oracle (IaaS)](vm-oracle-iaas.md) | Oracle Database on Azure VM with managed disks, Key Vault, monitoring, and backup. |
-| [VM + MongoDB (IaaS)](vm-mongodb-iaas.md) | MongoDB on Azure VM with managed disks, Key Vault, monitoring, and backup. |
-| [VM + MariaDB (IaaS)](vm-mariadb-iaas.md) | MariaDB on Azure VM with managed disks, Key Vault, monitoring, and backup. |
+| [PostgreSQL on VM](stacks/vm-postgresql-iaas.md) | Ubuntu VM + PostgreSQL 17, 4 disks, Patroni HA, pgBackRest to Blob |
+| [MySQL on VM](stacks/vm-mysql-iaas.md) | Ubuntu VM + MySQL 8.4 LTS, 4 disks, InnoDB Cluster HA, Percona XtraBackup |
+| [SQL Server on VM](stacks/vm-sqlserver-iaas.md) | Official SQL Server Marketplace image, 5 disks, SQL IaaS Agent, PAYG/AHUB |
 
 ### Virtual Machines
 
 | Stack | Description |
 |-------|-------------|
-| [VM Production](vm-production.md) | Production-ready Azure VM with managed disks, Bastion access, Key Vault, monitoring, backup, and network isolation. |
-| [VMSS Autoscale](vmss-autoscale.md) | VM Scale Set with autoscaling, Load Balancer, Key Vault, monitoring, and network isolation. |
-| [Dev Jump Box](dev-jumpbox.md) | Secure jump box VM with Bastion access, Managed Identity, and monitoring. |
+| [VM Production](stacks/vm-production.md) | Production VM (Linux/Windows) with backup, monitoring, and update management |
+| [VMSS Autoscale](stacks/vmss-autoscale.md) | VM Scale Set with autoscaling, Load Balancer, and monitoring |
+| [Dev Jump Box](stacks/dev-jumpbox.md) | Secure jump box with Bastion access and Managed Identity |
+
+### AI & Machine Learning
+
+| Stack | Description |
+|-------|-------------|
+| [OpenAI Baseline](stacks/openai-baseline.md) | Azure OpenAI with Key Vault, Managed Identity, and monitoring |
+| [RAG Baseline](stacks/rag-baseline.md) | RAG with Azure OpenAI + AI Search + Storage |
+| [RAG + PostgreSQL (pgvector)](stacks/rag-postgresql.md) | RAG using PostgreSQL pgvector as vector store |
+| [RAG + Azure SQL](stacks/rag-sql.md) | RAG using Azure SQL as vector store |
+| [RAG + Cosmos DB](stacks/rag-cosmosdb.md) | RAG using Cosmos DB as vector store |
+| [RAG Enterprise](stacks/rag-enterprise.md) | Enterprise RAG with full network isolation and Firewall |
+| [Chatbot Enterprise](stacks/chatbot-enterprise.md) | OpenAI + AI Search + App Service chatbot |
+| [AI Foundry Baseline](stacks/ai-foundry-baseline.md) | Azure AI Foundry (ML Workspace) with Key Vault and Storage |
+| [AI Foundry Enterprise](stacks/ai-foundry-enterprise.md) | Enterprise AI Foundry with ACR, full network isolation, and Backup |
+| [AI Multi-Service](stacks/ai-multiservice-baseline.md) | Azure AI Services (multi-service Cognitive Account) |
+| [AI Data Platform](stacks/ai-data-platform.md) | Databricks + Data Factory + Synapse + ML Workspace |
+| [AI Secure Regulated](stacks/ai-secure-regulated.md) | Fully isolated AI platform for regulated industries |
+| [GenAI Private](stacks/genai-private-baseline.md) | Private generative AI with OpenAI + AI Search behind PE |
+| [MLOps Platform](stacks/mlops-platform.md) | Azure ML with ACR, Key Vault, Storage, and monitoring |
+| [Internal Knowledge Hub](stacks/internal-knowledge-hub.md) | RAG-based internal knowledge base |
+
+### AI Cognitive Services
+
+| Stack | Description |
+|-------|-------------|
+| [Vision Baseline](stacks/vision-baseline.md) | Azure AI Vision with Key Vault and monitoring |
+| [Vision Video Analytics](stacks/vision-video-analytics.md) | Video analytics with AI Vision and Storage |
+| [Speech Baseline](stacks/speech-baseline.md) | Azure AI Speech with Key Vault and monitoring |
+| [Speech Call Center](stacks/speech-call-center.md) | Call center analytics with AI Speech and Communication Services |
+| [NLP Language](stacks/nlp-language-baseline.md) | Azure AI Language with Key Vault and monitoring |
+| [NLP Translator](stacks/nlp-translator-baseline.md) | Azure AI Translator with Key Vault and monitoring |
+| [Document Intelligence](stacks/document-intelligence-baseline.md) | Azure AI Document Intelligence (Form Recognizer) |
+| [Document Intelligence Pipeline](stacks/document-intelligence-pipeline.md) | Document processing pipeline with Logic App |
+| [Knowledge Mining](stacks/knowledge-mining-baseline.md) | Azure AI Search with Cognitive Skills and Storage |
+| [Content Safety](stacks/content-safety-platform.md) | Azure AI Content Safety with OpenAI integration |
 
 ### Networking
 
 | Stack | Description |
 |-------|-------------|
-| [Hub-Spoke Network](hub-spoke-network.md) | Classic hub-spoke network topology. |
-| [Spoke Workload](spoke-workload.md) | Spoke VNet for workloads in a hub-spoke topology. |
-| [Platform Connectivity](platform-connectivity.md) | CAF Platform connectivity with hub VNet, Firewall, Bastion, DNS Private Resolver, Private DNS Zones, and DDoS Protection. |
-| [Multi-Region HA](multi-region-ha.md) | Multi-region high availability architecture with Traffic Manager, paired App Services, geo-replicated database, and Front Door. |
+| [Hub-Spoke Network](stacks/hub-spoke-network.md) | Classic hub-spoke network topology |
+| [Spoke Workload](stacks/spoke-workload.md) | Spoke VNet for workloads in hub-spoke topology |
+| [Platform Connectivity](stacks/platform-connectivity.md) | CAF hub VNet with Firewall, Bastion, DNS, and DDoS Protection |
 
 ### Landing Zones & Governance
 
 | Stack | Description |
 |-------|-------------|
-| [Landing Zone Foundation](landing-zone-fondation.md) | CAF-aligned foundation landing zone with governance, monitoring, and identity baseline. |
-| [Landing Zone Enterprise](landing-zone-entreprise.md) | CAF-aligned enterprise landing zone with hub-spoke network, Firewall, Bastion, DNS Private Resolver, Policy, and centralized monitoring. |
-| [Landing Zone PME](landingzone-pme.md) | Simplified landing zone for SMBs. |
-| [Governance Baseline](governance-baseline.md) | Azure governance foundation with Policy assignments, budgets, and monitoring. |
-| [Governance Subscription](governance-subscription.md) | Subscription-level governance with Policy assignments, RBAC, budgets, and diagnostic settings. |
-| [Governance Organization](governance-organization.md) | Organization-wide governance with Management Groups, Policy initiatives, and centralized monitoring. |
+| [Landing Zone PME](stacks/landingzone-pme.md) | Simplified landing zone for SMBs, cost-optimized |
+| [Landing Zone Foundation](stacks/landing-zone-fondation.md) | CAF-aligned foundation landing zone |
+| [Landing Zone Enterprise](stacks/landing-zone-entreprise.md) | CAF enterprise landing zone with hub-spoke, Firewall, Bastion, Policy |
+| [Governance Baseline](stacks/governance-baseline.md) | Azure governance with Policy assignments, budgets, and monitoring |
+| [Governance Subscription](stacks/governance-subscription.md) | Subscription-level governance with RBAC, budgets, and Defender |
+| [Governance Organization](stacks/governance-organization.md) | Organization-wide governance with Management Groups and Policy |
 
 ### Platform & Operations
 
 | Stack | Description |
 |-------|-------------|
-| [Platform Management](platform-management.md) | CAF Platform management with Log Analytics, Automation Account, and centralized monitoring. |
-| [Monitoring Platform](monitoring-platform.md) | Centralized monitoring with Log Analytics, Application Insights, and Automation Account. |
-| [Operations Management](ops-management.md) | Operational management stack with Automation Account, Log Analytics, and monitoring. |
-| [CI/CD Runners](cicd-runners.md) | Self-hosted CI/CD runners on Azure VMs with Managed Identity, Key Vault, and monitoring. |
+| [Platform Management](stacks/platform-management.md) | CAF management with Log Analytics, Automation, and monitoring |
+| [Monitoring Platform](stacks/monitoring-platform.md) | Centralized monitoring with Log Analytics and Application Insights |
+| [Operations Management](stacks/ops-management.md) | Automation Account, Backup Vault, Logic App, and monitoring |
+| [CI/CD Runners](stacks/cicd-runners.md) | Self-hosted CI/CD runners on Azure VMs |
+| [Sentinel SOC](stacks/sentinel-soc-baseline.md) | Microsoft Sentinel SIEM with data connectors and analytics rules |
 
 ### Event & Messaging
 
 | Stack | Description |
 |-------|-------------|
-| [Event Streaming](event-streaming.md) | Azure Event Hub with Storage Account (checkpointing), Key Vault, and monitoring. |
-| [Event-Driven Platform](event-driven-platform.md) | Event-driven architecture with Event Hub, Service Bus, Function App, and monitoring. |
+| [Event Streaming](stacks/event-streaming.md) | Azure Event Hub with Storage and monitoring |
+| [Event-Driven Platform](stacks/event-driven-platform.md) | Event Hub + Service Bus + Function App |
 
 ### Data & Analytics
 
 | Stack | Description |
 |-------|-------------|
-| [Data Platform Baseline](data-platform-baseline.md) | Azure data platform with Data Factory, Databricks or Synapse, Storage (Data Lake), Key Vault, and monitoring. |
-| [Secure Data Pipeline](secure-data-pipeline.md) | Secure data pipeline with Data Factory, Storage (Data Lake), Key Vault, and monitoring behind Private Endpoints. |
+| [Data Platform Baseline](stacks/data-platform-baseline.md) | Data Factory + Databricks/Synapse + Data Lake |
+| [Secure Data Pipeline](stacks/secure-data-pipeline.md) | Data Factory + Data Lake behind Private Endpoints |
 
-### Compliance & Regulated
+### Compliance & Regulated Industries
 
 | Stack | Description |
 |-------|-------------|
-| [FinTech PCI-DSS Baseline](fintech-pci-baseline.md) | Hardened App Service + PostgreSQL with Azure Firewall, Bastion, Front Door WAF, and full network isolation. |
-| [Healthcare HDS](healthcare-hds.md) | Healthcare-grade infrastructure aligned with HDS (Hébergeur de Données de Santé) requirements. |
-| [SaaS Multi-Tenant](saas-multitenant.md) | Multi-tenant SaaS architecture with App Service, Azure SQL, Front Door, Key Vault, and monitoring. |
+| [FinTech PCI-DSS](stacks/fintech-pci-baseline.md) | Hardened App Service + PostgreSQL with Firewall, Bastion, Front Door WAF |
+| [Healthcare HDS](stacks/healthcare-hds.md) | Infrastructure aligned with HDS requirements |
+| [SaaS Multi-Tenant](stacks/saas-multitenant.md) | Multi-tenant SaaS with App Service, Azure SQL, Front Door |
 
 ### Desktop & End-User
 
 | Stack | Description |
 |-------|-------------|
-| [Azure Virtual Desktop Enterprise](avd-enterprise.md) | Azure Virtual Desktop (AVD) with host pools, workspace, application groups, scaling plan, and Shared Image Gallery. |
-| [Shared Image Gallery](shared-image-gallery.md) | Azure Compute Gallery for managing and distributing custom VM images. |
+| [Azure Virtual Desktop](stacks/avd-enterprise.md) | AVD with host pools, FSLogix, scaling plan, and Shared Image Gallery |
+| [Shared Image Gallery](stacks/shared-image-gallery.md) | Azure Compute Gallery for custom VM images |
 
 ---
 
-**[Browse all stacks on aethronops.com](https://aethronops.com/stacks)**
+### Compliance Frameworks
+
+Every stack includes documented control mappings for:
+
+| Framework | Scope |
+|-----------|-------|
+| **CAF** | Cloud Adoption Framework — naming, tagging, resource organization |
+| **WAF** | Well-Architected Framework — Security, Reliability, Cost, Operations, Performance |
+| **MCSB** | Microsoft Cloud Security Benchmark v1 — 60+ security controls |
+| **GDPR** | General Data Protection Regulation — Art. 25, 30, 32, 33 |
+| **NIS2** | Network and Information Security Directive — Art. 21(2) measures |
+| **DORA** | Digital Operational Resilience Act (financial services stacks) |
+
+### How it works
+
+```
+1. Choose your stack          (e.g. "App Service + PostgreSQL")
+2. Pick your tier             (Basic / Standard / Premium)
+3. Set your project name      (e.g. "myapp")
+4. terraform init && apply    (5 minutes, done)
+```
+
+### Built with
+
+- [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — official Microsoft Terraform modules
+- [Terraform](https://www.terraform.io/) — infrastructure as code
+- [Checkov](https://www.checkov.io/) — static analysis for compliance
+
+---
+
+**[Browse all stacks on aethronops.com](https://aethronops.com)**
