@@ -16,7 +16,7 @@ This is the exact same code we generate for paid stacks — same AVM modules, sa
 ## How to use
 
 ```bash
-cd free/storage-baseline/basic
+cd stacks_free/storage-baseline/basic
 terraform init
 terraform plan -var-file=terraform.tfvars
 terraform apply -var-file=terraform.tfvars
