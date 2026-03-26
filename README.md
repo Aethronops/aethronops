@@ -1,6 +1,6 @@
 # AethronOps — Stack Catalog
 
-Production-ready Azure infrastructure as code.
+Azure infrastructure as code — without the weeks of work.
 
 Every stack is a complete Terraform project built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules.
 
