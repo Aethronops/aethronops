@@ -1,6 +1,6 @@
-# DB Admin — PostgreSQL
+# DB Admin — SQL Managed Instance
 
-Monitoring pack for an existing PostgreSQL Flexible Server. Adds Log Analytics, diagnostic settings, alerts, and backup configuration.
+Monitoring pack for an existing SQL Managed Instance. Adds Log Analytics, diagnostic settings, and alerts.
 
 ## Azure Resources Deployed
 
@@ -8,12 +8,10 @@ Monitoring pack for an existing PostgreSQL Flexible Server. Adds Log Analytics, 
 - Log Analytics Workspace
 - Managed Identity (User-Assigned)
 - Key Vault
+- Storage Account
 - Virtual Network + Subnets
 - NAT Gateway
 - Network Security Group (NSG)
-- Storage Account
-- PostgreSQL Flexible Server
-- Application Insights
 - Backup Vault
 - Private DNS Zone
 - Private Endpoint
@@ -21,8 +19,8 @@ Monitoring pack for an existing PostgreSQL Flexible Server. Adds Log Analytics, 
 ## Tiers
 
 - **Basic** (7 resources) — Dev/POC — core services, public access.
-- **Standard** (9 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (15 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Standard** (7 resources) — Production — adds VNet isolation, NSG.
+- **Premium** (53 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 
@@ -39,4 +37,4 @@ A Terraform project (ZIP) ready to `terraform init && apply`:
 
 ---
 
-**[View all stacks](https://aethronops.com/stacks) · [Get this stack](https://aethronops.com/stacks/db-admin-postgresql)**
+**[View all stacks](https://aethronops.com/stacks) · [Get this stack](https://aethronops.com/stacks/db-admin-sqlmi)**

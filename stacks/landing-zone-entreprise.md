@@ -1,10 +1,8 @@
 # Landing Zone Enterprise
 
-CAF-aligned enterprise landing zone with hub-spoke network, Firewall, Bastion, DNS Private Resolver, Policy, and centralized monitoring.
+Hub-spoke network, Firewall, Bastion, DNS Private Resolver, Policy, and centralized monitoring. CAF-aligned.
 
-**Compliance:** CAF · WAF · MCSB · RGPD · NIS2 · DORA
-
-## Azure Components
+## Azure Resources Deployed
 
 - Resource Group
 - Log Analytics Workspace
@@ -29,23 +27,25 @@ CAF-aligned enterprise landing zone with hub-spoke network, Firewall, Bastion, D
 - Public IP Address
 - DDoS Protection Plan
 
-## Available Tiers
+## Tiers
 
-- **Basic** (11 resources) — Core services, public access. Suitable for development and proof-of-concept.
-- **Standard** (18 resources) — Adds VNet isolation, NSG, and production-grade configuration.
-- **Premium** (24 resources) — Full network isolation with Private Endpoints, Backup Vault, and enterprise hardening.
+- **Basic** (11 resources) — Dev/POC — core services, public access.
+- **Standard** (18 resources) — Production — adds VNet isolation, NSG, Private Endpoints.
+- **Premium** (24 resources) — Enterprise — adds Private Endpoints, Firewall, Bastion, Front Door, Backup Vault.
 
 ## What You Get
 
-A complete Terraform project (ZIP) with:
+A Terraform project (ZIP) ready to `terraform init && apply`:
 
 - Multi-file structure (networking.tf, identity.tf, monitoring.tf, etc.)
-- Azure Verified Modules (AVM) — Microsoft's official Terraform modules
+- Built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules
 - Pre-configured `terraform.tfvars` for your chosen tier
-- Compliance report (COMPLIANCE.md) with control mappings
-- Checkov security scanning configuration
-- README with architecture overview and deployment instructions
+- Managed Identity on every resource (no credentials in code)
+- Diagnostic settings to Log Analytics on every resource
+- Key Vault for secrets management
+- Checkov security scan: 0 failed checks
+- README with deployment instructions
 
 ---
 
-**[View all stacks](https://aethronops.com/stacks) · [Generate this stack](https://aethronops.com/stacks/landing-zone-entreprise)**
+**[View all stacks](https://aethronops.com/stacks) · [Get this stack](https://aethronops.com/stacks/landing-zone-entreprise)**

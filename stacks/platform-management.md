@@ -1,10 +1,8 @@
 # Platform Management
 
-CAF Platform management with Log Analytics, Automation Account, and centralized monitoring. The management subscription for Landing Zone architectures.
+Log Analytics, Automation Account, and centralized monitoring. CAF management subscription for Landing Zone architectures.
 
-**Compliance:** CAF · WAF · MCSB · RGPD · NIS2 · DORA
-
-## Azure Components
+## Azure Resources Deployed
 
 - Resource Group
 - Log Analytics Workspace
@@ -15,23 +13,25 @@ CAF Platform management with Log Analytics, Automation Account, and centralized 
 - Automation Account
 - Backup Vault
 
-## Available Tiers
+## Tiers
 
-- **Basic** (6 resources) — Core services, public access. Suitable for development and proof-of-concept.
-- **Standard** (8 resources) — Adds VNet isolation, NSG, and production-grade configuration.
-- **Premium** (8 resources) — Full network isolation with Private Endpoints, Backup Vault, and enterprise hardening.
+- **Basic** (6 resources) — Dev/POC — core services, public access.
+- **Standard** (8 resources) — Production configuration.
+- **Premium** (8 resources) — Enterprise — adds Backup Vault.
 
 ## What You Get
 
-A complete Terraform project (ZIP) with:
+A Terraform project (ZIP) ready to `terraform init && apply`:
 
 - Multi-file structure (networking.tf, identity.tf, monitoring.tf, etc.)
-- Azure Verified Modules (AVM) — Microsoft's official Terraform modules
+- Built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules
 - Pre-configured `terraform.tfvars` for your chosen tier
-- Compliance report (COMPLIANCE.md) with control mappings
-- Checkov security scanning configuration
-- README with architecture overview and deployment instructions
+- Managed Identity on every resource (no credentials in code)
+- Diagnostic settings to Log Analytics on every resource
+- Key Vault for secrets management
+- Checkov security scan: 0 failed checks
+- README with deployment instructions
 
 ---
 
-**[View all stacks](https://aethronops.com/stacks) · [Generate this stack](https://aethronops.com/stacks/platform-management)**
+**[View all stacks](https://aethronops.com/stacks) · [Get this stack](https://aethronops.com/stacks/platform-management)**

@@ -1,10 +1,8 @@
 # Azure Container Registry
 
-Private container registry with geo-replication, vulnerability scanning, and network isolation. Store and manage Docker images for AKS, App Service, and Container Apps.
+Private container registry with geo-replication, vulnerability scanning, and network isolation.
 
-**Compliance:** CAF · WAF · MCSB · RGPD · NIS2
-
-## Azure Components
+## Azure Resources Deployed
 
 - Resource Group
 - Log Analytics Workspace
@@ -20,23 +18,25 @@ Private container registry with geo-replication, vulnerability scanning, and net
 - Private DNS Zone
 - Private Endpoint
 
-## Available Tiers
+## Tiers
 
-- **Basic** (5 resources) — Core services, public access. Suitable for development and proof-of-concept.
-- **Standard** (10 resources) — Adds VNet isolation, NSG, and production-grade configuration.
-- **Premium** (13 resources) — Full network isolation with Private Endpoints, Backup Vault, and enterprise hardening.
+- **Basic** (5 resources) — Dev/POC — core services, public access.
+- **Standard** (10 resources) — Production — adds VNet isolation, NSG, Private Endpoints.
+- **Premium** (13 resources) — Enterprise — adds Private Endpoints, Bastion, Backup Vault.
 
 ## What You Get
 
-A complete Terraform project (ZIP) with:
+A Terraform project (ZIP) ready to `terraform init && apply`:
 
 - Multi-file structure (networking.tf, identity.tf, monitoring.tf, etc.)
-- Azure Verified Modules (AVM) — Microsoft's official Terraform modules
+- Built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules
 - Pre-configured `terraform.tfvars` for your chosen tier
-- Compliance report (COMPLIANCE.md) with control mappings
-- Checkov security scanning configuration
-- README with architecture overview and deployment instructions
+- Managed Identity on every resource (no credentials in code)
+- Diagnostic settings to Log Analytics on every resource
+- Key Vault for secrets management
+- Checkov security scan: 0 failed checks
+- README with deployment instructions
 
 ---
 
-**[View all stacks](https://aethronops.com/stacks) · [Generate this stack](https://aethronops.com/stacks/acr-registry)**
+**[View all stacks](https://aethronops.com/stacks) · [Get this stack](https://aethronops.com/stacks/acr-registry)**

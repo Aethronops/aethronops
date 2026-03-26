@@ -1,10 +1,8 @@
 # App Service Web
 
-Azure App Service for web applications with Key Vault, Storage, and monitoring. No database included — bring your own or add one later.
+Azure App Service for web applications with Key Vault, Storage, and monitoring. Optionally add PostgreSQL, MySQL, or Azure SQL during generation.
 
-**Compliance:** CAF · WAF · MCSB · RGPD · NIS2
-
-## Azure Components
+## Azure Resources Deployed
 
 - Resource Group
 - Log Analytics Workspace
@@ -25,23 +23,25 @@ Azure App Service for web applications with Key Vault, Storage, and monitoring. 
 - Private DNS Zone
 - Backup Vault
 
-## Available Tiers
+## Tiers
 
-- **Basic** (7 resources) — Core services, public access. Suitable for development and proof-of-concept.
-- **Standard** (13 resources) — Adds VNet isolation, NSG, and production-grade configuration.
-- **Premium** (18 resources) — Full network isolation with Private Endpoints, Backup Vault, and enterprise hardening.
+- **Basic** (7 resources) — Dev/POC — core services, public access.
+- **Standard** (13 resources) — Production — adds VNet isolation, NSG, Private Endpoints.
+- **Premium** (52 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
 
 ## What You Get
 
-A complete Terraform project (ZIP) with:
+A Terraform project (ZIP) ready to `terraform init && apply`:
 
 - Multi-file structure (networking.tf, identity.tf, monitoring.tf, etc.)
-- Azure Verified Modules (AVM) — Microsoft's official Terraform modules
+- Built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules
 - Pre-configured `terraform.tfvars` for your chosen tier
-- Compliance report (COMPLIANCE.md) with control mappings
-- Checkov security scanning configuration
-- README with architecture overview and deployment instructions
+- Managed Identity on every resource (no credentials in code)
+- Diagnostic settings to Log Analytics on every resource
+- Key Vault for secrets management
+- Checkov security scan: 0 failed checks
+- README with deployment instructions
 
 ---
 
-**[View all stacks](https://aethronops.com/stacks) · [Generate this stack](https://aethronops.com/stacks/appservice-web)**
+**[View all stacks](https://aethronops.com/stacks) · [Get this stack](https://aethronops.com/stacks/appservice-web)**

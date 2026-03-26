@@ -1,10 +1,8 @@
 # Governance Organization
 
-Organization-wide governance with Management Groups, Policy initiatives, and centralized monitoring. For multi-subscription Azure estates.
+Management Groups, Policy initiatives, and centralized monitoring for multi-subscription Azure estates.
 
-**Compliance:** CAF · WAF · MCSB · RGPD · NIS2
-
-## Azure Components
+## Azure Resources Deployed
 
 - Management Group
 - Policy Definitions
@@ -14,23 +12,25 @@ Organization-wide governance with Management Groups, Policy initiatives, and cen
 - Policy Remédiation
 - Custom Rbac Definitions
 
-## Available Tiers
+## Tiers
 
-- **Basic** (3 resources) — Core services, public access. Suitable for development and proof-of-concept.
-- **Standard** (5 resources) — Adds VNet isolation, NSG, and production-grade configuration.
-- **Premium** (7 resources) — Full network isolation with Private Endpoints, Backup Vault, and enterprise hardening.
+- **Basic** (3 resources) — Dev/POC — core services, public access.
+- **Standard** (5 resources) — Production configuration.
+- **Premium** (12 resources) — Enterprise hardening.
 
 ## What You Get
 
-A complete Terraform project (ZIP) with:
+A Terraform project (ZIP) ready to `terraform init && apply`:
 
 - Multi-file structure (networking.tf, identity.tf, monitoring.tf, etc.)
-- Azure Verified Modules (AVM) — Microsoft's official Terraform modules
+- Built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules
 - Pre-configured `terraform.tfvars` for your chosen tier
-- Compliance report (COMPLIANCE.md) with control mappings
-- Checkov security scanning configuration
-- README with architecture overview and deployment instructions
+- Managed Identity on every resource (no credentials in code)
+- Diagnostic settings to Log Analytics on every resource
+- Key Vault for secrets management
+- Checkov security scan: 0 failed checks
+- README with deployment instructions
 
 ---
 
-**[View all stacks](https://aethronops.com/stacks) · [Generate this stack](https://aethronops.com/stacks/governance-organization)**
+**[View all stacks](https://aethronops.com/stacks) · [Get this stack](https://aethronops.com/stacks/governance-organization)**

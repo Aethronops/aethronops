@@ -1,10 +1,8 @@
 # PostgreSQL Private
 
-Standalone PostgreSQL Flexible Server with full network isolation, Key Vault, monitoring, and backup. For workloads that need a dedicated private PostgreSQL instance.
+PostgreSQL Flexible Server with network isolation, Key Vault, monitoring, and backup.
 
-**Compliance:** CAF · WAF · MCSB · RGPD · NIS2
-
-## Azure Components
+## Azure Resources Deployed
 
 - Resource Group
 - Log Analytics Workspace
@@ -18,23 +16,25 @@ Standalone PostgreSQL Flexible Server with full network isolation, Key Vault, mo
 - Private Endpoint
 - Backup Vault
 
-## Available Tiers
+## Tiers
 
-- **Basic** (7 resources) — Core services, public access. Suitable for development and proof-of-concept.
-- **Standard** (7 resources) — Adds VNet isolation, NSG, and production-grade configuration.
-- **Premium** (11 resources) — Full network isolation with Private Endpoints, Backup Vault, and enterprise hardening.
+- **Basic** (35 resources) — Dev/POC — core services, public access.
+- **Standard** (7 resources) — Production — adds VNet isolation, NSG.
+- **Premium** (47 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 
-A complete Terraform project (ZIP) with:
+A Terraform project (ZIP) ready to `terraform init && apply`:
 
 - Multi-file structure (networking.tf, identity.tf, monitoring.tf, etc.)
-- Azure Verified Modules (AVM) — Microsoft's official Terraform modules
+- Built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules
 - Pre-configured `terraform.tfvars` for your chosen tier
-- Compliance report (COMPLIANCE.md) with control mappings
-- Checkov security scanning configuration
-- README with architecture overview and deployment instructions
+- Managed Identity on every resource (no credentials in code)
+- Diagnostic settings to Log Analytics on every resource
+- Key Vault for secrets management
+- Checkov security scan: 0 failed checks
+- README with deployment instructions
 
 ---
 
-**[View all stacks](https://aethronops.com/stacks) · [Generate this stack](https://aethronops.com/stacks/postgresql-private)**
+**[View all stacks](https://aethronops.com/stacks) · [Get this stack](https://aethronops.com/stacks/postgresql-private)**
