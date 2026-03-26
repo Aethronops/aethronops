@@ -1,0 +1,49 @@
+# AethronOps Stack Manifest
+# Generated automatically — do not edit
+---
+stack:
+  type: governance-organization
+  tier: standard
+  version: "2.0.0"
+  generator: aethronops
+
+infrastructure:
+  location: westeurope
+  region_short: weu
+  provider: azurerm ~> 4.0
+
+compliance:
+  frameworks: [CAF, MCSB, NIS2, RGPD, WAF]
+  frameworks_count: 5
+
+value_summary:
+  avm_bricks: 5
+  security_features: 0
+  private_endpoints: 0
+  environments: 3
+  includes:
+    - none
+
+bricks:
+  count: 5
+  list:
+    - name: management-group
+      ref: management-group
+      avm: native
+      version: n/a
+    - name: policy-definitions
+      ref: policy-definitions
+      avm: native
+      version: n/a
+    - name: policy-initiatives
+      ref: policy-initiatives
+      avm: native
+      version: n/a
+    - name: policy-assignments
+      ref: policy-assignments
+      avm: native
+      version: n/a
+    - name: policy-exemptions
+      ref: policy-exemptions
+      avm: native
+      version: n/a

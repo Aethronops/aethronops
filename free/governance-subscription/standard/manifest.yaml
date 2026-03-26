@@ -1,0 +1,61 @@
+# AethronOps Stack Manifest
+# Generated automatically — do not edit
+---
+stack:
+  type: governance-subscription
+  tier: standard
+  version: "2.0.0"
+  generator: aethronops
+
+infrastructure:
+  location: westeurope
+  region_short: weu
+  provider: azurerm ~> 4.0
+
+compliance:
+  frameworks: [CAF, DORA, MCSB, NIS2, RGPD, WAF]
+  frameworks_count: 6
+
+value_summary:
+  avm_bricks: 8
+  security_features: 1
+  private_endpoints: 0
+  environments: 3
+  includes:
+    - Managed Identity
+
+bricks:
+  count: 8
+  list:
+    - name: resource-group
+      ref: resource-group
+      avm: Azure/avm-res-resources-resourcegroup/azurerm
+      version: ~> 0.2
+    - name: log-analytics
+      ref: log-analytics
+      avm: Azure/avm-res-operationalinsights-workspace/azurerm
+      version: ~> 0.4
+    - name: managed-identity
+      ref: managed-identity
+      avm: Azure/avm-res-managedidentity-userassignedidentity/azurerm
+      version: ~> 0.3
+    - name: subscription-diagnostic
+      ref: subscription-diagnostic
+      avm: native
+      version: n/a
+    - name: subscription-budget
+      ref: subscription-budget
+      avm: native
+      version: n/a
+    - name: security-contact
+      ref: security-contact
+      avm: native
+      version: n/a
+    - name: defender-plans
+      ref: defender-plans
+      avm: native
+      version: n/a
+    - name: rbac-assignments
+      ref: rbac-assignments
+      avm: native
+      version: n/a

@@ -1,0 +1,17 @@
+---
+# AethronOps baseline security checks
+# AVM modules are verified by Microsoft — CKV_TF_1 is safe to skip
+skip-check:
+  - CKV_TF_1
+
+# ──────────────────────────────────────────────────────────
+# ENTERPRISE CUSTOM CHECKS
+# Add your organization's Checkov policies below.
+# Docs: https://www.checkov.io/3.Custom%20Policies/Custom%20Policies%20Overview.html
+# ──────────────────────────────────────────────────────────
+# custom-policies-dir: ./custom_checks/
+# Example: Uncomment to enforce additional checks
+# check:
+#   - CKV_AZURE_35   # Ensure storage logging for Queue service
+#   - CKV_AZURE_36   # Ensure storage logging for Table service
+#   - CKV_AZURE_59   # Ensure public access disabled on storage account
