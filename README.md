@@ -113,6 +113,7 @@ We did that work. Every stack ships with:
 | [AI Foundry Enterprise](stacks/ai-foundry-enterprise.md) | AI Foundry with Container Registry, Application Insights, full network isolation, and Backup Vault. |
 | [AI Multi-Service Baseline](stacks/ai-multiservice-baseline.md) | Azure AI Services (multi-service Cognitive Account) with Key Vault and monitoring. |
 | [AI Secure Regulated](stacks/ai-secure-regulated.md) | Fully isolated AI platform: Azure OpenAI + AI Search + Machine Learning behind Azure Firewall, Bastion, and Private Endpoints. |
+| [AI Data Platform](stacks/ai-data-platform.md) | Azure Databricks, Data Factory, Synapse Analytics, and Machine Learning workspace. |
 | [GenAI Private Baseline](stacks/genai-private-baseline.md) | Azure OpenAI, AI Search, Storage, all behind Private Endpoints. |
 | [MLOps Platform](stacks/mlops-platform.md) | Azure Machine Learning with Container Registry, Key Vault, Storage, Application Insights, and network isolation. |
 | [Internal Knowledge Hub](stacks/internal-knowledge-hub.md) | Azure OpenAI, AI Search, Storage, and App Service. |
@@ -136,18 +137,13 @@ We did that work. Every stack ships with:
 
 | Stack | Description |
 |-------|-------------|
-| [Hub-Spoke Network](stacks/hub-spoke-network.md) | Hub VNet with Bastion, optional Azure Firewall, and spoke peering. |
-| [Spoke Workload](stacks/spoke-workload.md) | Spoke VNet peered to hub with NSG, Route Table, and subnets. |
 | [Platform Connectivity](stacks/platform-connectivity.md) | Hub VNet, Firewall, Bastion, DNS Private Resolver, Private DNS Zones, and DDoS Protection. |
 | [Multi-Region HA](stacks/multi-region-ha.md) | Traffic Manager, paired App Services, geo-replicated database, and Front Door. |
 
-### Landing Zones & Governance
+### Governance
 
 | Stack | Description |
 |-------|-------------|
-| [Landing Zone Foundation](stacks/landing-zone-fondation.md) | Governance, monitoring, and identity baseline. |
-| [Landing Zone Enterprise](stacks/landing-zone-entreprise.md) | Hub-spoke network, Firewall, Bastion, DNS Private Resolver, Policy, and centralized monitoring. |
-| [Governance Baseline](stacks/governance-baseline.md) | Azure Policy assignments, budgets, and monitoring at the subscription level. |
 | [Governance Subscription](stacks/governance-subscription.md) | Subscription-level governance with Policy assignments, RBAC, budgets, and diagnostic settings. |
 | [Governance Organization](stacks/governance-organization.md) | Management Groups, Policy initiatives, and centralized monitoring for multi-subscription Azure estates. |
 
@@ -156,7 +152,6 @@ We did that work. Every stack ships with:
 | Stack | Description |
 |-------|-------------|
 | [Platform Management](stacks/platform-management.md) | Log Analytics, Automation Account, and centralized monitoring. |
-| [Monitoring Platform](stacks/monitoring-platform.md) | Log Analytics, Application Insights, and Automation Account. |
 | [Operations Management](stacks/ops-management.md) | Automation Account, Log Analytics, and monitoring. |
 
 ### Event & Messaging
@@ -182,4 +177,4 @@ We did that work. Every stack ships with:
 
 ---
 
-**85 stacks** available. [Browse all stacks on aethronops.com](https://aethronops.com/stacks)
+**78 stacks** available. [Browse all stacks on aethronops.com](https://aethronops.com/stacks)
