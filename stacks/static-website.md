@@ -20,8 +20,8 @@ Storage Account static site hosting with Key Vault and monitoring.
 
 ## Tiers
 
-- **Basic** (5 resources) — Dev/POC — core services, public access.
-- **Standard** (7 resources) — Production configuration.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production configuration.
 - **Premium** (40 resources) — Enterprise — adds Private Endpoints, Front Door.
 
 ## What You Get

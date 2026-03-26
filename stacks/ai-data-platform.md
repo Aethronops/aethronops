@@ -22,8 +22,8 @@ Azure Databricks, Data Factory, Synapse Analytics, and Machine Learning workspac
 
 ## Tiers
 
-- **Basic** (9 resources) — Dev/POC — core services, public access.
-- **Standard** (11 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (72 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

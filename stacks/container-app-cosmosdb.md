@@ -23,8 +23,8 @@ Azure Container Apps with Cosmos DB for distributed applications and event-drive
 
 ## Tiers
 
-- **Basic** (8 resources) — Dev/POC — core services, public access.
-- **Standard** (14 resources) — Production — adds VNet isolation, NSG, Private Endpoints.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG, Private Endpoints.
 - **Premium** (55 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
 
 ## What You Get

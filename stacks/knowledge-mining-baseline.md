@@ -21,8 +21,8 @@ Azure AI Search with Cognitive Skills, Storage, Key Vault, and monitoring. Extra
 
 ## Tiers
 
-- **Basic** (7 resources) — Dev/POC — core services, public access.
-- **Standard** (10 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (61 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

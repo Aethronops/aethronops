@@ -20,8 +20,8 @@ Azure Container Registry for container images, Helm charts, and OCI artifacts wi
 
 ## Tiers
 
-- **Basic** (6 resources) — Dev/POC — core services, public access.
-- **Standard** (10 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (42 resources) — Enterprise — adds Private Endpoints, Firewall.
 
 ## What You Get

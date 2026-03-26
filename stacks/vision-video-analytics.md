@@ -23,8 +23,8 @@ AI Vision, Storage, and monitoring. Real-time video analysis and people counting
 
 ## Tiers
 
-- **Basic** (9 resources) — Dev/POC — core services, public access.
-- **Standard** (12 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (71 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

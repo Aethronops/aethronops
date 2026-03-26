@@ -25,8 +25,8 @@ Hardened App Service + PostgreSQL with Azure Firewall, Bastion, Front Door WAF, 
 
 ## Tiers
 
-- **Basic** (12 resources) — Dev/POC — core services, public access.
-- **Standard** (11 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (70 resources) — Enterprise — adds Private Endpoints, Firewall, Bastion, Front Door, Backup Vault.
 
 ## What You Get

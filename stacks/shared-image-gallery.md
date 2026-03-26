@@ -20,8 +20,8 @@ Azure Compute Gallery for custom VM images. Version control, replication, and RB
 
 ## Tiers
 
-- **Basic** (5 resources) — Dev/POC — core services, public access.
-- **Standard** (8 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (42 resources) — Enterprise — adds Private Endpoints, Bastion.
 
 ## What You Get

@@ -14,8 +14,8 @@ Management Groups, Policy initiatives, and centralized monitoring for multi-subs
 
 ## Tiers
 
-- **Basic** (3 resources) — Dev/POC — core services, public access.
-- **Standard** (5 resources) — Production configuration.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production configuration.
 - **Premium** (12 resources) — Enterprise hardening.
 
 ## What You Get

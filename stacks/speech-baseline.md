@@ -20,8 +20,8 @@ Azure AI Speech with Key Vault and monitoring. Speech-to-text, text-to-speech, a
 
 ## Tiers
 
-- **Basic** (6 resources) — Dev/POC — core services, public access.
-- **Standard** (9 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (56 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

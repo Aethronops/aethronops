@@ -20,8 +20,8 @@ Azure Static Web App for SPA and JAMstack. Global CDN, custom domains, free SSL,
 
 ## Tiers
 
-- **Basic** (7 resources) — Dev/POC — core services, public access.
-- **Standard** (9 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (41 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

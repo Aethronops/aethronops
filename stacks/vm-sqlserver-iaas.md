@@ -23,8 +23,8 @@ SQL Server on Azure VM with managed disks, Key Vault, monitoring, and backup.
 
 ## Tiers
 
-- **Basic** (8 resources) — Dev/POC — core services, public access.
-- **Standard** (11 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (67 resources) — Enterprise — adds Private Endpoints, Bastion, Backup Vault.
 
 ## What You Get

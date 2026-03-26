@@ -20,8 +20,8 @@ Azure AI Language with Key Vault and monitoring. NER, sentiment analysis, key ph
 
 ## Tiers
 
-- **Basic** (6 resources) — Dev/POC — core services, public access.
-- **Standard** (9 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (53 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

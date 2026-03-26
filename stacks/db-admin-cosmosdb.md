@@ -17,8 +17,8 @@ Monitoring pack for an existing Cosmos DB account. Adds Log Analytics, diagnosti
 
 ## Tiers
 
-- **Basic** (5 resources) — Dev/POC — core services, public access.
-- **Standard** (7 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (48 resources) — Enterprise — adds Private Endpoints.
 
 ## What You Get

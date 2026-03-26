@@ -24,8 +24,8 @@ App Service, Azure SQL, Front Door, Key Vault, and monitoring. Tenant isolation 
 
 ## Tiers
 
-- **Basic** (8 resources) — Dev/POC — core services, public access.
-- **Standard** (11 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (66 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
 
 ## What You Get

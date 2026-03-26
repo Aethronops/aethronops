@@ -25,8 +25,8 @@ Azure OpenAI + AI Search + App Service chatbot with RAG architecture and monitor
 
 ## Tiers
 
-- **Basic** (12 resources) — Dev/POC — core services, public access.
-- **Standard** (14 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (89 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

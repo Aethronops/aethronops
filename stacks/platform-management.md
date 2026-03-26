@@ -15,8 +15,8 @@ Log Analytics, Automation Account, and centralized monitoring. CAF management su
 
 ## Tiers
 
-- **Basic** (6 resources) — Dev/POC — core services, public access.
-- **Standard** (8 resources) — Production configuration.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production configuration.
 - **Premium** (26 resources) — Enterprise — adds Backup Vault.
 
 ## What You Get

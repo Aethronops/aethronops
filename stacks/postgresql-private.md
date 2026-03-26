@@ -18,8 +18,8 @@ PostgreSQL Flexible Server with network isolation, Key Vault, monitoring, and ba
 
 ## Tiers
 
-- **Basic** (35 resources) — Dev/POC — core services, public access.
-- **Standard** (7 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (47 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

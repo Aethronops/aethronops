@@ -25,8 +25,8 @@ Azure App Service for web applications with Key Vault, Storage, and monitoring. 
 
 ## Tiers
 
-- **Basic** (7 resources) — Dev/POC — core services, public access.
-- **Standard** (13 resources) — Production — adds VNet isolation, NSG, Private Endpoints.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG, Private Endpoints.
 - **Premium** (54 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
 
 ## What You Get

@@ -24,8 +24,8 @@ AI Speech, Communication Services, Storage, and monitoring. Transcription, senti
 
 ## Tiers
 
-- **Basic** (11 resources) — Dev/POC — core services, public access.
-- **Standard** (13 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (92 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get

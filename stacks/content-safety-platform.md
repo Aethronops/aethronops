@@ -22,8 +22,8 @@ Azure AI Content Safety with OpenAI integration and monitoring. Detect harmful c
 
 ## Tiers
 
-- **Basic** (10 resources) — Dev/POC — core services, public access.
-- **Standard** (12 resources) — Production — adds VNet isolation, NSG.
+- **Basic** — Dev/POC — core services, public access.
+- **Standard** — Production — adds VNet isolation, NSG.
 - **Premium** (72 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
