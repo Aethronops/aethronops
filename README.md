@@ -179,4 +179,4 @@ We did that work. Every stack ships with:
 
 **78 stacks** available. [Browse all stacks on aethronops.com](https://aethronops.com/stacks)
 
-**4 free stacks** with full source code: [free/](free/) — same code, same quality, no account needed.
+**4 free stacks** with full source code: [stacks_free/](stacks_free/) — same code, same quality, no account needed.
