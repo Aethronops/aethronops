@@ -2,9 +2,20 @@
 
 Production-ready Azure infrastructure as code.
 
-Every stack is a complete Terraform project built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules. Managed Identity, Key Vault, Log Analytics, and network isolation are built into every stack.
+Every stack is a complete Terraform project built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules.
 
-Each stack comes in 3 tiers (Basic / Standard / Premium) so you pick the security level that matches your environment.
+### Why AethronOps exists
+
+AVM modules are great — but wiring them together is the hard part. Each module has its own interface, naming conventions, version constraints, and dependency chain. Getting 40–100+ resources to work together with proper network isolation, identity, monitoring, and secrets management takes days of engineering work.
+
+We did that work. Every stack ships with:
+
+- All module dependencies resolved and tested (`terraform plan` verified, Checkov: 0 failed)
+- Managed Identity on every resource (no credentials in code)
+- Diagnostic settings to Log Analytics on every resource
+- Key Vault for secrets management
+- Security posture report (SECURITY-POSTURE.md) mapping resources to 9 frameworks
+- 3 tiers (Basic / Standard / Premium) — pick the security level that matches your environment
 
 ### Web Applications
 
@@ -102,7 +113,6 @@ Each stack comes in 3 tiers (Basic / Standard / Premium) so you pick the securit
 | [AI Foundry Enterprise](stacks/ai-foundry-enterprise.md) | AI Foundry with Container Registry, Application Insights, full network isolation, and Backup Vault. |
 | [AI Multi-Service Baseline](stacks/ai-multiservice-baseline.md) | Azure AI Services (multi-service Cognitive Account) with Key Vault and monitoring. |
 | [AI Secure Regulated](stacks/ai-secure-regulated.md) | Fully isolated AI platform: Azure OpenAI + AI Search + Machine Learning behind Azure Firewall, Bastion, and Private Endpoints. |
-| [AI Data Platform](stacks/ai-data-platform.md) | Azure Databricks, Data Factory, Synapse Analytics, and Machine Learning workspace. |
 | [GenAI Private Baseline](stacks/genai-private-baseline.md) | Azure OpenAI, AI Search, Storage, all behind Private Endpoints. |
 | [MLOps Platform](stacks/mlops-platform.md) | Azure Machine Learning with Container Registry, Key Vault, Storage, Application Insights, and network isolation. |
 | [Internal Knowledge Hub](stacks/internal-knowledge-hub.md) | Azure OpenAI, AI Search, Storage, and App Service. |
@@ -126,13 +136,18 @@ Each stack comes in 3 tiers (Basic / Standard / Premium) so you pick the securit
 
 | Stack | Description |
 |-------|-------------|
+| [Hub-Spoke Network](stacks/hub-spoke-network.md) | Hub VNet with Bastion, optional Azure Firewall, and spoke peering. |
+| [Spoke Workload](stacks/spoke-workload.md) | Spoke VNet peered to hub with NSG, Route Table, and subnets. |
 | [Platform Connectivity](stacks/platform-connectivity.md) | Hub VNet, Firewall, Bastion, DNS Private Resolver, Private DNS Zones, and DDoS Protection. |
 | [Multi-Region HA](stacks/multi-region-ha.md) | Traffic Manager, paired App Services, geo-replicated database, and Front Door. |
 
-### Governance
+### Landing Zones & Governance
 
 | Stack | Description |
 |-------|-------------|
+| [Landing Zone Foundation](stacks/landing-zone-fondation.md) | Governance, monitoring, and identity baseline. |
+| [Landing Zone Enterprise](stacks/landing-zone-entreprise.md) | Hub-spoke network, Firewall, Bastion, DNS Private Resolver, Policy, and centralized monitoring. |
+| [Governance Baseline](stacks/governance-baseline.md) | Azure Policy assignments, budgets, and monitoring at the subscription level. |
 | [Governance Subscription](stacks/governance-subscription.md) | Subscription-level governance with Policy assignments, RBAC, budgets, and diagnostic settings. |
 | [Governance Organization](stacks/governance-organization.md) | Management Groups, Policy initiatives, and centralized monitoring for multi-subscription Azure estates. |
 
@@ -141,6 +156,7 @@ Each stack comes in 3 tiers (Basic / Standard / Premium) so you pick the securit
 | Stack | Description |
 |-------|-------------|
 | [Platform Management](stacks/platform-management.md) | Log Analytics, Automation Account, and centralized monitoring. |
+| [Monitoring Platform](stacks/monitoring-platform.md) | Log Analytics, Application Insights, and Automation Account. |
 | [Operations Management](stacks/ops-management.md) | Automation Account, Log Analytics, and monitoring. |
 
 ### Event & Messaging
@@ -166,4 +182,4 @@ Each stack comes in 3 tiers (Basic / Standard / Premium) so you pick the securit
 
 ---
 
-**78 stacks** available. [Browse all stacks on aethronops.com](https://aethronops.com/stacks)
+**85 stacks** available. [Browse all stacks on aethronops.com](https://aethronops.com/stacks)

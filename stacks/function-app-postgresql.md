@@ -28,16 +28,24 @@ Azure Functions with PostgreSQL Flexible Server, Key Vault, Storage, and monitor
 
 ## What You Get
 
-A Terraform project (ZIP) ready to `terraform init && apply`:
+A Terraform project (ZIP) ready to `terraform init && apply`.
 
-- Multi-file structure (networking.tf, identity.tf, monitoring.tf, etc.)
-- Built on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) — Microsoft's official Terraform modules
-- Pre-configured `terraform.tfvars` for your chosen tier
-- Managed Identity on every resource (no credentials in code)
-- Diagnostic settings to Log Analytics on every resource
-- Key Vault for secrets management
-- Checkov security scan: 0 failed checks
-- README with deployment instructions
+### Why this is hard to do yourself
+
+[Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) are Microsoft's official Terraform modules — but wiring them together is the hard part. Each module has its own interface, naming conventions, version constraints, and dependency chain. Getting them to work together with proper network isolation, identity, monitoring, and secrets management takes days of work for an experienced engineer.
+
+We did that work. Every stack is:
+
+- **Wired and tested** — all module dependencies resolved, `terraform plan` verified, Checkov scan passed with 0 failed checks
+- **Multi-file structure** — networking.tf, identity.tf, monitoring.tf, keyvault.tf, etc. (not a single 2000-line main.tf)
+- **Managed Identity everywhere** — no credentials in code, no service principal secrets to rotate
+- **Diagnostic settings on every resource** — logs flowing to Log Analytics from day one
+- **Key Vault for secrets** — TLS certificates, connection strings, passwords — nothing in plaintext
+- **Pre-configured `terraform.tfvars`** — pick your tier, set your project name, deploy
+
+### Security posture included
+
+Each stack ships with a SECURITY-POSTURE.md that maps every deployed resource to 9 security frameworks: CAF, WAF, MCSB, GDPR, NIS2, DORA, PCI-DSS, HDS, and EU AI Act (where applicable). This is not a certificate — it's a transparent audit trail showing exactly what each resource does for your security posture.
 
 ---
 
