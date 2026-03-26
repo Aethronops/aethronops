@@ -23,7 +23,7 @@ Azure Machine Learning with Container Registry, Key Vault, Storage, Application 
 
 - **Basic** (8 resources) — Dev/POC — core services, public access.
 - **Standard** (10 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (60 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (61 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

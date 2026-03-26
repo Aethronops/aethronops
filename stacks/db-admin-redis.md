@@ -19,7 +19,7 @@ Monitoring pack for an existing Azure Cache for Redis. Adds Log Analytics, diagn
 
 - **Basic** (5 resources) — Dev/POC — core services, public access.
 - **Standard** (7 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (11 resources) — Enterprise — adds Private Endpoints.
+- **Premium** (60 resources) — Enterprise — adds Private Endpoints.
 
 ## What You Get
 

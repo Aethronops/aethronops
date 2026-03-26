@@ -21,7 +21,7 @@ Subscription-level governance with Policy assignments, RBAC, budgets, and diagno
 
 - **Basic** (5 resources) — Dev/POC — core services, public access.
 - **Standard** (8 resources) — Production configuration.
-- **Premium** (12 resources) — Enterprise hardening.
+- **Premium** (37 resources) — Enterprise hardening.
 
 ## What You Get
 

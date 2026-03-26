@@ -26,7 +26,7 @@ AI Speech, Communication Services, Storage, and monitoring. Transcription, senti
 
 - **Basic** (11 resources) — Dev/POC — core services, public access.
 - **Standard** (13 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (91 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (92 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

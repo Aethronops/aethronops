@@ -22,7 +22,7 @@ Storage Account static site hosting with Key Vault and monitoring.
 
 - **Basic** (5 resources) — Dev/POC — core services, public access.
 - **Standard** (7 resources) — Production configuration.
-- **Premium** (39 resources) — Enterprise — adds Private Endpoints, Front Door.
+- **Premium** (40 resources) — Enterprise — adds Private Endpoints, Front Door.
 
 ## What You Get
 

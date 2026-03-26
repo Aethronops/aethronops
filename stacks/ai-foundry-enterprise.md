@@ -28,7 +28,7 @@ AI Foundry with Container Registry, Application Insights, full network isolation
 
 - **Basic** (11 resources) — Dev/POC — core services, public access.
 - **Standard** (13 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (24 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
+- **Premium** (87 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
 
 ## What You Get
 

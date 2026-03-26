@@ -24,7 +24,7 @@ Event Hub, Service Bus, Function App, and monitoring. For decoupled microservice
 
 - **Basic** (9 resources) — Dev/POC — core services, public access.
 - **Standard** (11 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (58 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (59 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

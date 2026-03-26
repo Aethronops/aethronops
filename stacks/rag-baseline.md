@@ -23,7 +23,7 @@ Azure OpenAI + AI Search + Storage. The standard architecture for grounding LLM 
 
 - **Basic** (7 resources) — Dev/POC — core services, public access.
 - **Standard** (10 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (59 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (61 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

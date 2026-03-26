@@ -22,7 +22,7 @@ Azure Container Apps with Container Apps Environment, ACR, Key Vault, and monito
 
 - **Basic** (6 resources) — Dev/POC — core services, public access.
 - **Standard** (9 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (42 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (44 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

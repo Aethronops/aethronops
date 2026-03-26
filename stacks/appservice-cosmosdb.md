@@ -24,7 +24,7 @@ Azure App Service with Cosmos DB (NoSQL), Key Vault, Storage, and monitoring.
 
 - **Basic** (8 resources) — Dev/POC — core services, public access.
 - **Standard** (11 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (58 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (60 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

@@ -22,7 +22,7 @@ Private container registry with geo-replication, vulnerability scanning, and net
 
 - **Basic** (5 resources) — Dev/POC — core services, public access.
 - **Standard** (10 resources) — Production — adds VNet isolation, NSG, Private Endpoints.
-- **Premium** (13 resources) — Enterprise — adds Private Endpoints, Bastion, Backup Vault.
+- **Premium** (45 resources) — Enterprise — adds Private Endpoints, Bastion, Backup Vault.
 
 ## What You Get
 

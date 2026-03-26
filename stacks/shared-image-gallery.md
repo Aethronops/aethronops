@@ -22,7 +22,7 @@ Azure Compute Gallery for custom VM images. Version control, replication, and RB
 
 - **Basic** (5 resources) — Dev/POC — core services, public access.
 - **Standard** (8 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (41 resources) — Enterprise — adds Private Endpoints, Bastion.
+- **Premium** (42 resources) — Enterprise — adds Private Endpoints, Bastion.
 
 ## What You Get
 

@@ -28,7 +28,7 @@ Azure OpenAI, AI Search, App Service frontend, Firewall, Bastion, and full netwo
 
 - **Basic** (11 resources) — Dev/POC — core services, public access.
 - **Standard** (13 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (82 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
+- **Premium** (83 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
 
 ## What You Get
 

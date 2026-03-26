@@ -26,7 +26,7 @@ Hub VNet, Firewall, Bastion, DNS Private Resolver, Private DNS Zones, and DDoS P
 
 - **Basic** (10 resources) — Dev/POC — core services, public access.
 - **Standard** (18 resources) — Production — adds VNet isolation, NSG, Private Endpoints.
-- **Premium** (80 resources) — Enterprise — adds Private Endpoints, Firewall, Bastion, Backup Vault.
+- **Premium** (82 resources) — Enterprise — adds Private Endpoints, Firewall, Bastion, Backup Vault.
 
 ## What You Get
 

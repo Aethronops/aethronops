@@ -24,7 +24,7 @@ Fully isolated AI platform: Azure OpenAI + AI Search + Machine Learning behind A
 
 - **Basic** (10 resources) — Dev/POC — core services, public access.
 - **Standard** (12 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (70 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (72 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

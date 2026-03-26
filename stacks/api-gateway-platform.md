@@ -25,7 +25,7 @@ Azure API Management with App Service backend, Key Vault, and monitoring.
 
 - **Basic** (11 resources) — Dev/POC — core services, public access.
 - **Standard** (12 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (60 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (62 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

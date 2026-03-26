@@ -22,7 +22,7 @@ MySQL Flexible Server with network isolation, Key Vault, monitoring, and backup.
 
 - **Basic** (21 resources) — Dev/POC — core services, public access.
 - **Standard** (9 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (54 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (56 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

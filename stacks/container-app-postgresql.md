@@ -25,7 +25,7 @@ Azure Container Apps with PostgreSQL Flexible Server, PgBouncer connection pooli
 
 - **Basic** (8 resources) — Dev/POC — core services, public access.
 - **Standard** (14 resources) — Production — adds VNet isolation, NSG, Private Endpoints.
-- **Premium** (20 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
+- **Premium** (65 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
 
 ## What You Get
 

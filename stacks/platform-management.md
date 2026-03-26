@@ -17,7 +17,7 @@ Log Analytics, Automation Account, and centralized monitoring. CAF management su
 
 - **Basic** (6 resources) — Dev/POC — core services, public access.
 - **Standard** (8 resources) — Production configuration.
-- **Premium** (8 resources) — Enterprise — adds Backup Vault.
+- **Premium** (26 resources) — Enterprise — adds Backup Vault.
 
 ## What You Get
 

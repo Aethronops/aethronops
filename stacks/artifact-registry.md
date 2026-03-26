@@ -22,7 +22,7 @@ Azure Container Registry for container images, Helm charts, and OCI artifacts wi
 
 - **Basic** (6 resources) — Dev/POC — core services, public access.
 - **Standard** (10 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (17 resources) — Enterprise — adds Private Endpoints, Firewall.
+- **Premium** (42 resources) — Enterprise — adds Private Endpoints, Firewall.
 
 ## What You Get
 

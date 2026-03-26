@@ -21,7 +21,7 @@ Azure OpenAI Service with Key Vault, Managed Identity, and monitoring. Your data
 
 - **Basic** (5 resources) — Dev/POC — core services, public access.
 - **Standard** (8 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (49 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (51 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

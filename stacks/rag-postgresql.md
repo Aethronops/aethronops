@@ -23,7 +23,7 @@ Azure OpenAI + PostgreSQL pgvector as vector store.
 
 - **Basic** (8 resources) — Dev/POC — core services, public access.
 - **Standard** (10 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (69 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (71 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

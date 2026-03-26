@@ -24,7 +24,7 @@ Azure Event Hub with Storage Account (checkpointing), Key Vault, and monitoring.
 
 - **Basic** (9 resources) — Dev/POC — core services, public access.
 - **Standard** (11 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (57 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (58 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

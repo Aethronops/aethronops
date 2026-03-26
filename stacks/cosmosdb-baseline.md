@@ -22,7 +22,7 @@ Azure Cosmos DB (NoSQL) with Key Vault and monitoring.
 
 - **Basic** (20 resources) — Dev/POC — core services, public access.
 - **Standard** (9 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (15 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (51 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

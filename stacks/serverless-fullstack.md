@@ -25,7 +25,7 @@ Static Web App (frontend) + Function App (API) + Cosmos DB (database) + monitori
 
 - **Basic** (9 resources) — Dev/POC — core services, public access.
 - **Standard** (12 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (61 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (62 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

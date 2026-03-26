@@ -22,7 +22,7 @@ Monitoring pack for an existing PostgreSQL Flexible Server. Adds Log Analytics, 
 
 - **Basic** (7 resources) — Dev/POC — core services, public access.
 - **Standard** (9 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (15 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (107 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

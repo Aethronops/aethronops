@@ -26,7 +26,7 @@ Traffic Manager, paired App Services, geo-replicated database, and Front Door. C
 
 - **Basic** (10 resources) — Dev/POC — core services, public access.
 - **Standard** (12 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (70 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
+- **Premium** (71 resources) — Enterprise — adds Private Endpoints, Front Door, Backup Vault.
 
 ## What You Get
 

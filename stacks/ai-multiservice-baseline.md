@@ -22,7 +22,7 @@ Azure AI Services (multi-service Cognitive Account) with Key Vault and monitorin
 
 - **Basic** (6 resources) — Dev/POC — core services, public access.
 - **Standard** (9 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (51 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (53 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

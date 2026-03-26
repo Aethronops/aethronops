@@ -19,7 +19,7 @@ Azure Storage Account with Key Vault and monitoring. Blob, File, Queue, and Tabl
 
 - **Basic** (5 resources) — Dev/POC — core services, public access.
 - **Standard** (6 resources) — Production — adds VNet isolation.
-- **Premium** (34 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (36 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

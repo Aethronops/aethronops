@@ -24,7 +24,7 @@ Azure Cache for Redis with App Service, Key Vault, and monitoring. For session c
 
 - **Basic** (8 resources) — Dev/POC — core services, public access.
 - **Standard** (11 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (56 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (57 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

@@ -24,7 +24,7 @@ PostgreSQL on Azure VM with managed disks, Key Vault, monitoring, and backup.
 
 - **Basic** (8 resources) — Dev/POC — core services, public access.
 - **Standard** (10 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (17 resources) — Enterprise — adds Private Endpoints, Bastion, Backup Vault.
+- **Premium** (67 resources) — Enterprise — adds Private Endpoints, Bastion, Backup Vault.
 
 ## What You Get
 

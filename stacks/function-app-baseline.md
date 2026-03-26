@@ -23,7 +23,7 @@ Azure Functions with Key Vault, Storage, and monitoring. Serverless compute for 
 
 - **Basic** (31 resources) — Dev/POC — core services, public access.
 - **Standard** (10 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (49 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (51 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 

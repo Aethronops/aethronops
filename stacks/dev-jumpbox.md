@@ -24,7 +24,7 @@ Secure jump box VM with Bastion access, Managed Identity, and monitoring.
 
 - **Basic** (7 resources) — Dev/POC — core services, public access.
 - **Standard** (9 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (59 resources) — Enterprise — adds Private Endpoints, Bastion, Backup Vault.
+- **Premium** (60 resources) — Enterprise — adds Private Endpoints, Bastion, Backup Vault.
 
 ## What You Get
 

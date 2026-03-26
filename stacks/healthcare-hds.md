@@ -27,7 +27,7 @@ App Service + PostgreSQL + Firewall + Bastion with extended audit logging. Built
 
 - **Basic** (12 resources) — Dev/POC — core services, public access.
 - **Standard** (11 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (69 resources) — Enterprise — adds Private Endpoints, Firewall, Bastion, Front Door, Backup Vault.
+- **Premium** (70 resources) — Enterprise — adds Private Endpoints, Firewall, Bastion, Front Door, Backup Vault.
 
 ## What You Get
 

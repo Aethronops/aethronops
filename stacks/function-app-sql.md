@@ -24,7 +24,7 @@ Azure Functions with Azure SQL Database, Key Vault, Storage, and monitoring.
 
 - **Basic** (9 resources) — Dev/POC — core services, public access.
 - **Standard** (11 resources) — Production — adds VNet isolation, NSG.
-- **Premium** (59 resources) — Enterprise — adds Private Endpoints, Backup Vault.
+- **Premium** (61 resources) — Enterprise — adds Private Endpoints, Backup Vault.
 
 ## What You Get
 
