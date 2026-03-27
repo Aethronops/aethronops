@@ -4,7 +4,7 @@
 
 > **Production-ready Azure infrastructure — validated, compliant, ready to deploy.**
 
-AethronOps generates complete Terraform projects built exclusively on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/). Each stack is wired end-to-end: networking, identity, monitoring, secrets management, and security — with compliance documentation mapped to CAF, WAF, MCSB, GDPR, and NIS2.
+AethronOps generates complete Terraform projects built exclusively on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/). Each stack is wired end-to-end: networking, identity, monitoring, secrets management, and security — with compliance documentation mapped to 9 frameworks (CAF, WAF, MCSB, GDPR, NIS2, CIS, ISO 27001, SOC 2, ANSSI, plus DORA and EU AI Act for regulated/AI stacks).
 
 No access to your Azure subscription, your repo, or your credentials.
 
@@ -89,7 +89,7 @@ Every stack is validated before shipping:
 
 ## Security Frameworks
 
-Each stack includes a `SECURITY-POSTURE.md` mapping implemented controls to:
+Each stack includes a `SECURITY-POSTURE.md` mapping implemented controls to 9 frameworks:
 
 | Framework | Scope |
 |-----------|-------|
@@ -100,6 +100,11 @@ Each stack includes a `SECURITY-POSTURE.md` mapping implemented controls to:
 | **NIS2** | EU cybersecurity directive — risk management, incident reporting |
 | **DORA** | Digital Operational Resilience (fintech stacks) |
 | **EU AI Act** | AI transparency and compliance (AI stacks) |
+| **CIS Azure** | CIS Benchmarks v2.1 — hardening controls |
+| **ISO 27001** | Annex A controls — information security management |
+| **SOC 2** | Trust Services Criteria — security, availability, confidentiality |
+| **PCI-DSS 4.0** | Payment card industry (fintech stacks) |
+| **ANSSI** | French cloud security guidelines (SecNumCloud) |
 
 > These mappings help prepare for audits — they do not constitute a compliance certification.
 
