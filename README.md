@@ -110,6 +110,14 @@ Each stack includes a `SECURITY-POSTURE.md` mapping implemented controls to 9 fr
 
 ---
 
+## Need a custom stack?
+
+Our engine can compose any combination of Azure Verified Modules into a fully wired, compliance-mapped infrastructure. If your use case isn't covered by the catalog, we build it for you — same quality, same validation, same security posture documentation.
+
+**[Request a custom stack →](https://aethronops.com/contact/)**
+
+---
+
 ## Links
 
 - Website: [aethronops.com](https://aethronops.com)
