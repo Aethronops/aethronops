@@ -1,6 +1,6 @@
 # Free Stacks
 
-4 complete Terraform stacks you can use right now. Each one comes in 3 tiers (basic / standard / premium).
+5 complete Terraform stacks you can use right now. Each one comes in 3 tiers (basic / standard / premium).
 
 This is the exact same code we generate for paid stacks — same AVM modules, same structure, same security posture.
 
@@ -12,6 +12,7 @@ This is the exact same code we generate for paid stacks — same AVM modules, sa
 | [governance-subscription](governance-subscription/) | Budgets, Defender plans, RBAC, diagnostic settings |
 | [governance-organization](governance-organization/) | Management Groups, Policy definitions, Policy assignments |
 | [platform-management](platform-management/) | Log Analytics, App Insights, Key Vault, Automation Account |
+| [static-web-app](static-web-app/) | Static Web App, Key Vault, Storage, Managed Identity, Log Analytics |
 
 ## How to use
 

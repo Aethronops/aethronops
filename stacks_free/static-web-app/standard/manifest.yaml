@@ -1,0 +1,71 @@
+# AethronOps Stack Manifest
+# Generated automatically — do not edit
+---
+stack:
+  type: static-web-app
+  tier: standard
+  version: "2.0.0"
+  generator: aethronops
+
+infrastructure:
+  location: westeurope
+  region_short: weu
+  provider: azurerm ~> 4.0
+
+compliance:
+  frameworks: [CAF, DORA, MCSB, NIS2, RGPD, WAF]
+  frameworks_count: 6
+
+value_summary:
+  avm_bricks: 10
+  security_features: 3
+  private_endpoints: 0
+  environments: 3
+  includes:
+    - Network Security Groups
+    - Key Vault
+    - Managed Identity
+
+bricks:
+  count: 10
+  list:
+    - name: resource-group
+      ref: resource-group
+      avm: Azure/avm-res-resources-resourcegroup/azurerm
+      version: ~> 0.2
+    - name: log-analytics
+      ref: log-analytics
+      avm: Azure/avm-res-operationalinsights-workspace/azurerm
+      version: ~> 0.4
+    - name: managed-identity
+      ref: managed-identity
+      avm: Azure/avm-res-managedidentity-userassignedidentity/azurerm
+      version: ~> 0.3
+    - name: key-vault
+      ref: key-vault
+      avm: Azure/avm-res-keyvault-vault/azurerm
+      version: ~> 0.10
+    - name: static-web-app
+      ref: static-web-app
+      avm: Azure/avm-res-web-staticsite/azurerm
+      version: ~> 0.4
+    - name: storage-account
+      ref: storage-account
+      avm: Azure/avm-res-storage-storageaccount/azurerm
+      version: ~> 0.2
+    - name: application-insights
+      ref: application-insights
+      avm: Azure/avm-res-insights-component/azurerm
+      version: 0.3.0
+    - name: virtual-network
+      ref: virtual-network
+      avm: Azure/avm-res-network-virtualnetwork/azurerm
+      version: 0.17.1
+    - name: nat-gateway
+      ref: nat-gateway
+      avm: Azure/avm-res-network-natgateway/azurerm
+      version: ~> 0.3
+    - name: network-security-group
+      ref: network-security-group
+      avm: Azure/avm-res-network-networksecuritygroup/azurerm
+      version: 0.5.1
