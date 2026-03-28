@@ -2,7 +2,7 @@
 
 > **Important:** AethronOps generates Terraform code aligned with Azure security best practices. The included compliance mappings (SECURITY-POSTURE.md) are provided as audit preparation aids only. They do not constitute compliance certification, legal advice, or guarantee of regulatory conformity. You are solely responsible for validating compliance in your own environment.
 
-> **Production-ready Azure infrastructure — validated, compliant, ready to deploy.**
+> **Production-ready Azure infrastructure — validated, security-mapped, ready to deploy.**
 
 AethronOps generates complete Terraform projects built exclusively on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/). Each stack is wired end-to-end: networking, identity, monitoring, secrets management, and security — with compliance documentation mapped to 9 frameworks (CAF, WAF, MCSB, GDPR, NIS2, CIS, ISO 27001, SOC 2, ANSSI, plus DORA and EU AI Act for regulated/AI stacks).
 
@@ -71,6 +71,25 @@ my-project/
 │   └── manifest.yaml
 └── backend.tf.example
 ```
+
+---
+
+## Why not just use AI?
+
+AI tools (ChatGPT, Copilot, etc.) can generate Terraform snippets. But there's a massive gap between a code snippet and a production system.
+
+| | AI-generated code | AethronOps stack |
+|---|---|---|
+| **Wiring** | One isolated module, not connected | All modules wired end-to-end |
+| **Network security** | No Private Endpoints | Private Endpoints on every PaaS service |
+| **Identity** | Hardcoded credentials or missing | Managed Identity + Key Vault, zero secrets in code |
+| **Monitoring** | No diagnostic settings | Log Analytics + diagnostic settings on every resource |
+| **Structure** | Single 500-line main.tf | 15-20 files separated by domain |
+| **Validation** | No guarantee it works | `terraform plan` + `checkov` passed with 0 failures |
+| **Security docs** | Nothing | SECURITY-POSTURE.md mapped to 9 frameworks |
+| **Tested** | Might work, might not | Every stack tested on Azure — plan + apply |
+
+**The wiring is the hardest part.** Getting Private Endpoints in the right subnets, Managed Identity with the right RBAC roles on Key Vault, diagnostic settings pointing to the right Log Analytics workspace, NSG rules allowing the right traffic — that's what takes weeks. That's exactly what AethronOps does for you.
 
 ---
 
