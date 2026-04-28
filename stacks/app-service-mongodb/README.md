@@ -275,7 +275,6 @@ audits by accredited assessors.
 - **Mandatory review** — review all `.tf` files and `envs/<env>.tfvars` before deploying.
 - **No legal advice** — consult qualified legal counsel for regulatory matters.
 
-*See terms and conditions at [aethronops.com/legal](https://aethronops.com/legal) for full legal notices.*
 
 ---
 
