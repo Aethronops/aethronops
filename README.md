@@ -107,7 +107,7 @@ Provider constraints: `azurerm ~> 4.64`, `azapi ~> 2.4`. AVM telemetry is disabl
 
 This catalogue is released under the **MIT License** — see [LICENSE](./LICENSE).
 
-The **AethronOps** brand, name, and logo are trademarks of **PROJECTYL SASU** and are **not** covered by the MIT license. You are free to fork, modify, and redistribute the code; please don't ship derivatives under the AethronOps name.
+You are free to fork, modify, and redistribute the code under the MIT license terms.
 
 ---
 
