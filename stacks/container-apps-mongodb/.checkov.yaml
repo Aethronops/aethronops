@@ -1,0 +1,18 @@
+# ============================================================
+# AethronOps v3 — Configuration Checkov
+# ============================================================
+# Chaque skip est documenté et justifié.
+
+skip-check:
+  - CKV_TF_1
+  # Justification : Les modules AVM sont publiés sur le Terraform Registry
+  # (registry.terraform.io/Azure/...) et versionnés avec des tags semver (~> x.y).
+  # CKV_TF_1 exige un commit hash git, incompatible avec les sources registry.
+  # Référence AVM officielle : https://azure.github.io/Azure-Verified-Modules/
+  - CKV2_AZURE_24
+  # AethronOps: Automation Account for FinOps PaaS/VM scheduling.
+  # Network restriction requires VNet integration (premium only).
+  # In basic/standard, public access is required for runbook execution.
+  - CKV_GHA_7
+  # AethronOps: workflow_dispatch inputs are required for manual destroy
+  # and environment selection. This is by design for operator flexibility.

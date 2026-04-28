@@ -1,143 +1,118 @@
-# AethronOps
+# AethronOps — Open Source Dev Stacks
 
-> **Important:** AethronOps generates Terraform code aligned with Azure security best practices. The included compliance mappings (SECURITY-POSTURE.md) are provided as audit preparation aids only. They do not constitute compliance certification, legal advice, or guarantee of regulatory conformity. You are solely responsible for validating compliance in your own environment.
+Ten free, MIT-licensed Terraform stacks for Azure, built on [Azure Verified Modules](https://azure.github.io/Azure-Verified-Modules/) and ready to `terraform apply` from your laptop. Each stack provisions a complete workload (web/API tier + database + Key Vault + monitoring + managed identity) with **public network access** so you can iterate fast on prototypes, demos, and learning environments.
 
-> **Production-ready Azure infrastructure — validated, security-mapped, ready to deploy.**
+These dev stacks are deliberately lean: no VNet, no Private Endpoints, no Backup Vault, no FinOps automation, no Defender plans, no resource locks. They are **for prototyping only** — do not use them in production.
 
-AethronOps generates complete Terraform projects built exclusively on [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/). Each stack is wired end-to-end: networking, identity, monitoring, secrets management, and security — with compliance documentation mapped to 9 frameworks (CAF, WAF, MCSB, GDPR, NIS2, CIS, ISO 27001, SOC 2, ANSSI, plus DORA and EU AI Act for regulated/AI stacks).
-
-No access to your Azure subscription, your repo, or your credentials.
+Production-ready versions — VNet isolation, Private Endpoints, MCSB / CAF / WAF mappings, Backup Vault, FinOps automation, brownfield wiring on a shared Platform Baseline — are sold at **[aethronops.com](https://aethronops.com)**.
 
 ---
 
-## 78 Stacks — 5 Free
+## Catalogue
 
-### Free Stacks (download without account)
-
-| Stack | Description | Resources (premium) |
-|-------|-------------|-------------------|
-| **[Governance Organization](stacks/governance-organization.md)** | Management Groups, Policy initiatives, centralized monitoring | 12 |
-| **[Governance Subscription](stacks/governance-subscription.md)** | Subscription-level Policy, RBAC, budgets, diagnostic settings | 37 |
-| **[Platform Management](stacks/platform-management.md)** | Log Analytics, Automation Account, centralized monitoring | 26 |
-| **[Storage Baseline](stacks/storage-baseline.md)** | Storage Account with Key Vault, monitoring, network isolation | 36 |
-| **[Static Web App](stacks/static-web-app.md)** | Azure Static Web App (SPA/JAMstack) with Key Vault, Storage, monitoring | 41 |
-
-### Paid Stacks (73)
-
-| Category | Stacks | Examples |
-|----------|--------|---------|
-| Web Applications | 7 | App Service + PostgreSQL/MySQL/SQL/CosmosDB, API Gateway |
-| Serverless | 7 | Function App + databases, Serverless Full-Stack |
-| Container Apps | 5 | Container Apps + PostgreSQL/MySQL/SQL/CosmosDB |
-| Kubernetes (AKS) | 5 | AKS Startup, Microservices, Platform, ACR, Artifact Registry |
-| Databases | 6 | PostgreSQL, MySQL, SQL, CosmosDB, Redis, Storage |
-| Database Admin | 5 | Monitoring packs for existing databases |
-| IaaS (VM) | 4 | VM Production, Jump Box, VM + PostgreSQL/MySQL/SQL Server |
-| AI & ML | 14 | OpenAI, RAG (5 variants), AI Foundry, MLOps, Document Intelligence |
-| AI Cognitive | 10 | Vision, Speech, NLP, Content Safety, Knowledge Mining |
-| Networking | 2 | Platform Connectivity, Multi-Region HA |
-| Landing Zones | 2 | Foundation, Enterprise |
-| Operations | 1 | Ops Management |
-| Regulated | 3 | FinTech PCI, Healthcare HDS, SaaS Multi-Tenant |
-| Event & Messaging | 2 | Event Streaming, Event-Driven Platform |
-
-Full catalog: **[stacks/README.md](stacks/README.md)**
-
----
-
-## What you get in each ZIP
-
-```
-my-project/
-├── basic/                  ← Minimal (dev, POC)
-├── standard/               ← Production (VNet, NSG, Private Endpoints)
-├── premium/                ← Enterprise (Firewall, Bastion, Front Door, Backup)
-│   ├── main.tf
-│   ├── resource_group.tf
-│   ├── networking.tf
-│   ├── identity.tf
-│   ├── keyvault.tf
-│   ├── monitoring.tf
-│   ├── database.tf
-│   ├── app.tf
-│   ├── wiring.tf           ← All resources wired together
-│   ├── finops.tf            ← Budget alerts, auto-shutdown
-│   ├── variables.tf
-│   ├── outputs.tf
-│   ├── terraform.tfvars
-│   ├── .checkov.yaml        ← Security rules + justifications
-│   ├── README.md            ← 3-step deployment guide
-│   ├── SECURITY-POSTURE.md  ← CAF / WAF / MCSB / GDPR / NIS2 mapping
-│   └── manifest.yaml
-└── backend.tf.example
-```
-
----
-
-## Why not just use AI?
-
-AI tools (ChatGPT, Copilot, etc.) can generate Terraform snippets. But there's a massive gap between a code snippet and a production system.
-
-| | AI-generated code | AethronOps stack |
+| Stack ID | Description | Production version |
 |---|---|---|
-| **Wiring** | One isolated module, not connected | All modules wired end-to-end |
-| **Network security** | No Private Endpoints | Private Endpoints on every PaaS service |
-| **Identity** | Hardcoded credentials or missing | Managed Identity + Key Vault, zero secrets in code |
-| **Monitoring** | No diagnostic settings | Log Analytics + diagnostic settings on every resource |
-| **Structure** | Single 500-line main.tf | 15-20 files separated by domain |
-| **Validation** | No guarantee it works | `terraform plan` + `checkov` passed with 0 failures |
-| **Security docs** | Nothing | SECURITY-POSTURE.md mapped to 9 frameworks |
-| **Tested** | Might work, might not | Every stack tested on Azure — plan + apply |
-
-**The wiring is the hardest part.** Getting Private Endpoints in the right subnets, Managed Identity with the right RBAC roles on Key Vault, diagnostic settings pointing to the right Log Analytics workspace, NSG rules allowing the right traffic — that's what takes weeks. That's exactly what AethronOps does for you.
-
----
-
-## Validation
-
-Every stack is validated before shipping:
-
-| Check | Coverage |
-|-------|----------|
-| `terraform validate` | 83/83 premium |
-| `terraform plan` | 83/83 premium (12–107 resources) |
-| `checkov` | 83/83 premium (0 failed) |
-| `terraform apply` (real Azure) | 43+ stacks deployed and destroyed |
+| `app-service-postgresql` | App Service + PostgreSQL Flexible Server, with dedicated Key Vault, Storage, Log Analytics, Application Insights, Backup Vault, and Managed Identity. Ideal for Django, Rails, Laravel, Next.js. | [aethronops.com/stacks/app-service-postgresql/](https://aethronops.com/stacks/app-service-postgresql/) |
+| `app-service-sql` | App Service + Azure SQL Database, with dedicated Key Vault, Storage, Log Analytics, Application Insights, Backup Vault, and Managed Identity. Ideal for .NET, ASP.NET Core, Entity Framework. | [aethronops.com/stacks/app-service-sql/](https://aethronops.com/stacks/app-service-sql/) |
+| `app-service-cosmosdb` | App Service + Azure Cosmos DB (NoSQL API), with dedicated Key Vault, Storage, Log Analytics, Application Insights, Backup Vault, and Managed Identity. Ideal for NoSQL, multi-region, real-time apps. | [aethronops.com/stacks/app-service-cosmosdb/](https://aethronops.com/stacks/app-service-cosmosdb/) |
+| `app-service-mysql` | App Service + MySQL Flexible Server, with dedicated Key Vault, Storage, Log Analytics, Application Insights, Backup Vault, and Managed Identity. Ideal for WordPress, PHP, Drupal, Laravel. | [aethronops.com/stacks/app-service-mysql/](https://aethronops.com/stacks/app-service-mysql/) |
+| `app-service-mongodb` | App Service + Azure DocumentDB (MongoDB vCore), with dedicated Key Vault, Storage, Log Analytics, Application Insights, Backup Vault, and Managed Identity. Compatible with any MongoDB framework (MEAN, MERN, Spring + Mongo). | [aethronops.com/stacks/app-service-mongodb/](https://aethronops.com/stacks/app-service-mongodb/) |
+| `container-apps-postgresql` | Container App Environment + Container App + PostgreSQL Flexible Server, with dedicated Key Vault, Storage, Log Analytics, Application Insights, and Managed Identity. Ideal for containerised microservices in Node.js, Python, Go. | [aethronops.com/stacks/container-apps-postgresql/](https://aethronops.com/stacks/container-apps-postgresql/) |
+| `container-apps-sql` | Container App Environment + Container App + Azure SQL Database, with dedicated Key Vault, Storage, Log Analytics, Application Insights, and Managed Identity. Ideal for containerised .NET, Java, Node.js workloads. | [aethronops.com/stacks/container-apps-sql/](https://aethronops.com/stacks/container-apps-sql/) |
+| `container-apps-cosmosdb` | Container App Environment + Container App + Azure Cosmos DB (NoSQL API), with dedicated Key Vault, Storage, Log Analytics, Application Insights, and Managed Identity. Ideal for event-driven microservices and distributed apps. | [aethronops.com/stacks/container-apps-cosmosdb/](https://aethronops.com/stacks/container-apps-cosmosdb/) |
+| `container-apps-mysql` | Container App Environment + Container App + MySQL Flexible Server, with dedicated Key Vault, Storage, Log Analytics, Application Insights, and Managed Identity. No built-in connection pooler — pool on the application side. | [aethronops.com/stacks/container-apps-mysql/](https://aethronops.com/stacks/container-apps-mysql/) |
+| `container-apps-mongodb` | Container App Environment + Container App + Azure DocumentDB (MongoDB vCore), with dedicated Key Vault, Storage, Log Analytics, Application Insights, Backup Vault, and Managed Identity. Compatible with any MongoDB framework. | [aethronops.com/stacks/container-apps-mongodb/](https://aethronops.com/stacks/container-apps-mongodb/) |
 
 ---
 
-## Security Frameworks
+## Quick start
 
-Each stack includes a `SECURITY-POSTURE.md` mapping implemented controls to 9 frameworks:
+Prerequisites:
 
-| Framework | Scope |
-|-----------|-------|
-| **CAF** | Cloud Adoption Framework — naming, organization, governance |
-| **WAF** | Well-Architected Framework — 5 pillars |
-| **MCSB** | Microsoft Cloud Security Benchmark — Azure security controls |
-| **GDPR** | Encryption, audit, data residency |
-| **NIS2** | EU cybersecurity directive — risk management, incident reporting |
-| **DORA** | Digital Operational Resilience (fintech stacks) |
-| **EU AI Act** | AI transparency and compliance (AI stacks) |
-| **CIS Azure** | CIS Benchmarks v2.1 — hardening controls |
-| **ISO 27001** | Annex A controls — information security management |
-| **SOC 2** | Trust Services Criteria — security, availability, confidentiality |
-| **PCI-DSS 4.0** | Payment card industry (fintech stacks) |
-| **ANSSI** | French cloud security guidelines (SecNumCloud) |
+- Terraform `>= 1.6`
+- Azure CLI (`az login`) with **Owner** on the target subscription (Key Vault role assignments require it)
+- An Azure subscription ID
 
-> These mappings help prepare for audits — they do not constitute a compliance certification.
+```bash
+# 1. Clone the catalogue
+git clone https://github.com/Aethronops/aethronops.git
+cd aethronops/stacks/app-service-postgresql   # pick any of the 10 stacks
+
+# 2. Edit the dev variables (subscription_id and project_name are mandatory)
+$EDITOR envs/dev.tfvars
+
+# 3. Deploy
+terraform init
+terraform plan  -var-file=envs/dev.tfvars
+terraform apply -var-file=envs/dev.tfvars
+```
+
+Required variables in `envs/dev.tfvars`:
+
+- `subscription_id` — your Azure subscription GUID (`az account show --query id -o tsv`)
+- `project_name` — short identifier, max 8 characters, lowercase + hyphens only (Key Vault name limit)
+
+Other variables (region, runtime version, database SKU, retention, etc.) come with sensible dev defaults — adjust as needed. See each stack's `README.md` for full details.
+
+To tear everything down:
+
+```bash
+terraform destroy -var-file=envs/dev.tfvars
+```
 
 ---
 
-## Need a custom stack?
+## What's NOT in the dev version
 
-Our engine can compose any combination of Azure Verified Modules into a fully wired, compliance-mapped infrastructure. If your use case isn't covered by the catalog, we build it for you — same quality, same validation, same security posture documentation.
+The dev stacks in this repo are intentionally minimal. The following capabilities ship only with the paid production version on [aethronops.com](https://aethronops.com):
 
-**[Request a custom stack →](https://aethronops.com/contact/)**
+- **Network isolation** — VNet integration, dedicated subnets, NSGs, NAT Gateway, Route Tables
+- **Private Endpoints** — Key Vault, Storage, database, App Service / Container Apps all locked to private DNS
+- **Platform Baseline** — shared hub VNet, Redis cache, Log Analytics workspace, Backup Vault, Private DNS Zones, reused brownfield by every workload
+- **Backup Vault** — long-term backup with `ImmutabilityState=Locked` and soft-delete
+- **FinOps automation** — budgets, anomaly alerts, scheduled stop/start runbooks
+- **Resource Locks** — `CanNotDelete` on production resource groups
+- **Defender for Cloud plans** — Defender for App Service / SQL / Storage / Containers / Key Vault
+- **Extended SECURITY-POSTURE.md** — production version covers more modules (8 vs 7 in dev) and adds the brownfield wiring controls. The dev `SECURITY-POSTURE.md` already maps 53 controls across 4 frameworks (MCSB, CAF, WAF, plus GDPR / NIS2 traceability) — see the file inside any dev stack folder.
+
+AethronOps stacks are **aligned with** these industry frameworks — they are not a certification, audit report, or compliance guarantee. Regulatory compliance always depends on your global context (organisational, processes, other systems).
+
+If any of the production-only items above are on your roadmap, head to **[aethronops.com](https://aethronops.com)**.
+
+---
+
+## Built on
+
+These stacks delegate every Azure resource to official **Azure Verified Modules** (AVM) — Microsoft-curated, telemetry-disabled Terraform modules:
+
+- `Azure/avm-res-resources-resourcegroup/azurerm`
+- `Azure/avm-res-web-site/azurerm` (App Service plan + site)
+- `Azure/avm-res-app-managedenvironment/azurerm` (Container App Environment)
+- `Azure/avm-res-app-containerapp/azurerm`
+- `Azure/avm-res-dbforpostgresql-flexibleserver/azurerm`
+- `Azure/avm-res-dbformysql-flexibleserver/azurerm`
+- `Azure/avm-res-sql-server/azurerm`
+- `Azure/avm-res-documentdb-databaseaccount/azurerm` (Cosmos DB NoSQL)
+- `Azure/avm-res-documentdb-mongocluster/azurerm` (MongoDB vCore)
+- `Azure/avm-res-keyvault-vault/azurerm`
+- `Azure/avm-res-managedidentity-userassignedidentity/azurerm`
+- `Azure/avm-res-operationalinsights-workspace/azurerm` (Log Analytics)
+- `Azure/avm-res-insights-component/azurerm` (Application Insights)
+
+Provider constraints: `azurerm ~> 4.64`, `azapi ~> 2.4`. AVM telemetry is disabled (`enable_telemetry = false`) on every module call.
+
+---
+
+## License
+
+This catalogue is released under the **MIT License** — see [LICENSE](./LICENSE).
+
+The **AethronOps** brand, name, and logo are trademarks of **PROJECTYL SASU** and are **not** covered by the MIT license. You are free to fork, modify, and redistribute the code; please don't ship derivatives under the AethronOps name.
 
 ---
 
 ## Links
 
-- Website: [aethronops.com](https://aethronops.com)
-- Stack catalog: [stacks/README.md](stacks/README.md)
+- Production catalogue: [aethronops.com](https://aethronops.com)
+- Contact: [contact@aethronops.com](mailto:contact@aethronops.com)
+- Issues: [github.com/Aethronops/aethronops/issues](https://github.com/Aethronops/aethronops/issues)

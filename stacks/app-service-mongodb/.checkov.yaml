@@ -1,0 +1,27 @@
+# ============================================================
+# AethronOps v3 — Configuration Checkov
+# ============================================================
+# Chaque skip est documenté et justifié.
+
+skip-check:
+  - CKV_TF_1
+  # Justification : Les modules AVM sont publiés sur le Terraform Registry
+  # (registry.terraform.io/Azure/...) et versionnés avec des tags semver (~> x.y).
+  # CKV_TF_1 exige un commit hash git, incompatible avec les sources registry.
+  # Référence AVM officielle : https://azure.github.io/Azure-Verified-Modules/
+  - CKV_AZURE_225
+  # AethronOps: Zone redundancy dépend du tier (Premium uniquement).
+  # Les tiers basic/standard utilisent un plan single-zone — acceptable pour PME.
+  - CKV_AZURE_211
+  # AethronOps: App Service Plan production-suitable dépend du tier choisi.
+  # Le tier basic (dev/POC) utilise volontairement un plan réduit.
+  - CKV_AZURE_212
+  # AethronOps: Minimum instances for failover dépend du tier.
+  # Le scaling est configuré par tier dans envs/<env>.tfvars.
+  - CKV2_AZURE_24
+  # AethronOps: Automation Account for FinOps PaaS/VM scheduling.
+  # Network restriction requires VNet integration (premium only).
+  # In basic/standard, public access is required for runbook execution.
+  - CKV_GHA_7
+  # AethronOps: workflow_dispatch inputs are required for manual destroy
+  # and environment selection. This is by design for operator flexibility.

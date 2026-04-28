@@ -1,0 +1,62 @@
+# AethronOps Stack Manifest
+# Generated automatically — do not edit
+---
+stack:
+  type: container-apps-mongodb
+  tier: dev
+  version: "3.0.0"
+  generator: aethronops
+
+infrastructure:
+  location: francecentral
+  region_short: frc
+  provider: azurerm ~> 4.0
+
+compliance:
+  frameworks: [CAF, MCSB, NIS2, RGPD, WAF]
+  frameworks_count: 5
+
+value_summary:
+  avm_bricks: 8
+  security_features: 2
+  private_endpoints: 0
+  environments: 3
+  includes:
+    - Key Vault
+    - Managed Identity
+
+bricks:
+  count: 8
+  list:
+    - name: resource-group
+      ref: resource-group
+      avm: Azure/avm-res-resources-resourcegroup/azurerm
+      version: ~> 0.2
+    - name: log-analytics
+      ref: log-analytics
+      avm: Azure/avm-res-operationalinsights-workspace/azurerm
+      version: ~> 0.4
+    - name: managed-identity
+      ref: managed-identity
+      avm: Azure/avm-res-managedidentity-userassignedidentity/azurerm
+      version: ~> 0.3
+    - name: key-vault
+      ref: key-vault
+      avm: Azure/avm-res-keyvault-vault/azurerm
+      version: ~> 0.10
+    - name: application-insights
+      ref: application-insights
+      avm: Azure/avm-res-insights-component/azurerm
+      version: 0.3.0
+    - name: container-app-environment
+      ref: container-app-environment
+      avm: Azure/avm-res-app-managedenvironment/azurerm
+      version: ~> 0.4
+    - name: container-app
+      ref: container-app
+      avm: Azure/avm-res-app-containerapp/azurerm
+      version: ~> 0.7
+    - name: mongo-cluster
+      ref: mongo-cluster
+      avm: Azure/avm-res-documentdb-mongocluster/azurerm
+      version: ~> 0.1
