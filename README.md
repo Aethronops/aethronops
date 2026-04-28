@@ -73,9 +73,11 @@ The dev stacks in this repo are intentionally minimal. The following capabilitie
 - **FinOps automation** — budgets, anomaly alerts, scheduled stop/start runbooks
 - **Resource Locks** — `CanNotDelete` on production resource groups
 - **Defender for Cloud plans** — Defender for App Service / SQL / Storage / Containers / Key Vault
-- **Compliance mappings** — controls aligned with Microsoft Cloud Security Benchmark (MCSB), Cloud Adoption Framework (CAF), Well-Architected Framework (WAF), and traceability for GDPR / NIS2 readiness
+- **Extended SECURITY-POSTURE.md** — production version covers more modules (8 vs 7 in dev) and adds the brownfield wiring controls. The dev `SECURITY-POSTURE.md` already maps 53 controls across 4 frameworks (MCSB, CAF, WAF, plus GDPR / NIS2 traceability) — see the file inside any dev stack folder.
 
-If any of those are on your roadmap, head to **[aethronops.com](https://aethronops.com)**.
+AethronOps stacks are **aligned with** these industry frameworks — they are not a certification, audit report, or compliance guarantee. Regulatory compliance always depends on your global context (organisational, processes, other systems).
+
+If any of the production-only items above are on your roadmap, head to **[aethronops.com](https://aethronops.com)**.
 
 ---
 
